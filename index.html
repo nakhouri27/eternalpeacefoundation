@@ -121,7 +121,6 @@
           <p class="story-caption">Supplying a hospital bed to improve patient care</p>
         </div>
 
-
         <div class="story-box">
           <div class="story-media">
             <img src="images/story5-thumb.jpg" alt="Story 5" class="story-thumb">
@@ -258,14 +257,21 @@
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
     const storyBoxes = storyCarousel.querySelectorAll('.story-box');
-    const storyBoxWidth = storyBoxes[0].offsetWidth + 15; // width + gap
+
+    // Get box width dynamically
+    function getStoryBoxWidth() {
+      const box = storyBoxes[0];
+      const style = window.getComputedStyle(box);
+      const margin = parseInt(style.marginRight) || 15;
+      return box.offsetWidth + margin;
+    }
 
     leftArrow.addEventListener('click', () => {
-      storyCarousel.scrollBy({ left: -storyBoxWidth * 5, behavior: 'smooth' });
+      storyCarousel.scrollBy({ left: -getStoryBoxWidth(), behavior: 'smooth' });
     });
 
     rightArrow.addEventListener('click', () => {
-      storyCarousel.scrollBy({ left: storyBoxWidth * 5, behavior: 'smooth' });
+      storyCarousel.scrollBy({ left: getStoryBoxWidth(), behavior: 'smooth' });
     });
 
     storyBoxes.forEach(box => {
