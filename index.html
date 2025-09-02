@@ -23,7 +23,7 @@
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Programs</a></li>
+        <li><a href="#programs">Programs</a></li>
         <li><a href="#">Events</a></li>
         <li><a href="#">Donate</a></li>
         <li><a href="#">Volunteer</a></li>
@@ -36,7 +36,10 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>We can't help everyone but everyone can help someone</h1>
+      <h1>About Us</h1>
+      <p>Eternal Peace Foundation, founded in June 2021 under Section 8 of the Companies Act, is dedicated to serving vulnerable communities with compassion, dignity, and sustainable impact.</p>  
+      <p>Operating in Ranchi, Ahmedabad, Bangalore, and Pune, we focus on initiatives that address basic needs, healthcare, education, and social welfare. From providing nutritious meals and essential supplies to children and families, to supporting hospitals, promoting education, and organizing health camps, every project is designed to uplift lives and strengthen communities.</p>
+      <h2>“We can’t help everyone but everyone can help someone."</h2>
       <p></p>
       <div class="btn-group">
         <a href="#" class="btn primary">Donate Now</a>
@@ -57,31 +60,50 @@
     </div>
   </section>
 
-  <!-- Info Cards -->
-  <section class="info-cards">
-    <div class="card">
-      <img src="images/c1.png" alt="Project Bread Icon" class="card-icon">
-      <h3>PROJECT BREAD</h3>
-      <p>We provide essential groceries and meals to families struggling with hunger, ensuring no one goes to bed hungry.</p>
-      <p><span class="counter" data-target="10000">0</span>+ meals distributed monthly.</p>
-    </div>
-    <div class="card">
-      <img src="images/n1.png" alt="Education Icon" class="card-icon">
-      <h3>PROJECT GROWTH</h3>
-      <p>Empowering children with education, nutrition, and opportunities to grow into confident, healthy adults.</p>
-      <p><span class="counter" data-target="100">0</span>+ children supported with free education & supplies.</p>
-    </div>
-    <div class="card">
-      <img src="images/s1.png" alt="Community Icon" class="card-icon">
-      <h3>PROJECT WARMTH</h3>
-      <p>Distributing blankets, umbrellas, and clothing to help vulnerable communities face extreme weather conditions with dignity.</p>
-    </div>
-    <div class="card">
-      <img src="images/1n.png" alt="Community Icon" class="card-icon">
-      <h3>PROJECT LIFELINE</h3>
-      <p>Promoting health and care by conducting blood drives, medical camps, and providing hospitals with beds and wheelchairs.</p>
-    </div>
-  </section>
+  <!-- Info Cards Section -->
+  <section id="programs" class="info-cards-section">
+  <h2 class="programs-header">OUR PROGRAMS</h2>
+  <div class="info-cards">
+    <a href="events.html#project-bread" target="_blank" class="card-link">
+      <div class="card">
+        <img src="images/c1.png" alt="Project Bread Icon" class="card-icon">
+        <h3>PROJECT BREAD</h3>
+        <p>We provide essential groceries and meals to families struggling with hunger, ensuring no one goes to bed hungry.</p>
+        <p><span class="counter" data-target="10000">0</span>+ meals distributed.</p>
+      </div>
+    </a>
+
+    <a href="events.html#project-growth" target="_blank" class="card-link">
+      <div class="card">
+        <img src="images/n1.png" alt="Education Icon" class="card-icon">
+        <h3>PROJECT GROWTH</h3>
+        <p>Empowering children with education, nutrition, and opportunities to grow into confident, healthy adults.</p>
+        <p><span> </span></p>
+        <p><span class="counter" data-target="100">0</span>+ children supported with free education & supplies.</p>
+      </div>
+    </a>
+
+    <a href="events.html#project-warmth" target="_blank" class="card-link">
+      <div class="card">
+        <img src="images/u1.png" alt="Community Icon" class="card-icon">
+        <h3>PROJECT WARMTH</h3>
+        <p>Distributing blankets, umbrellas, and clothing to help vulnerable communities face extreme weather conditions with dignity.</p>
+        <p><span></span></p>
+        <p><span class="counter" data-target="1000">0</span>+.</p>
+      </div>
+    </a>
+
+    <a href="events.html#project-lifeline" target="_blank" class="card-link">
+      <div class="card">
+        <img src="images/1n.png" alt="Community Icon" class="card-icon">
+        <h3>PROJECT LIFELINE</h3>
+        <p>Promoting health and care by conducting blood drives, medical camps, and providing hospitals with beds and wheelchairs.</p>
+        <p><span></span></p>
+        <p><span class="counter" data-target="25">0</span>+ .</p>
+      </div>
+    </a>
+  </div>
+</section>
 
   <!-- Wave Divider -->
   <div class="wave">
@@ -164,7 +186,7 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Programs</a></li>
+          <li><a href="#programs">Programs</a></li>
           <li><a href="#">Events</a></li>
           <li><a href="#">Donate</a></li>
           <li><a href="#">Volunteer</a></li>
@@ -199,6 +221,16 @@
     const navLinks = document.getElementById("navLinks");
     hamburger.addEventListener("click", () => {
       navLinks.classList.toggle("active");
+    });
+
+    // Smooth scroll for Programs link
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        navLinks.classList.remove("active");
+      });
     });
 
     // Slider
@@ -253,7 +285,6 @@
     const rightArrow = document.querySelector('.right-arrow');
     const storyBoxes = storyCarousel.querySelectorAll('.story-box');
 
-    // Get box width dynamically
     function getStoryBoxWidth() {
       const box = storyBoxes[0];
       const style = window.getComputedStyle(box);
