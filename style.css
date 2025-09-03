@@ -45,13 +45,31 @@
 .info-cards-section { padding: 80px 40px; background: #fff; text-align: center; }
 .programs-header { font-size: 2.5rem; color: #ff6600; margin-bottom: 40px; }
 .info-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.card-link { text-decoration: none; color: inherit; }
 .card { background: #fff; border-radius: 20px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: transform .3s; }
 .card:hover { transform: translateY(-10px); }
 .card-icon { width: 80px; height: 80px; margin-bottom: 20px; }
 .card h3 { font-size: 1.5rem; color: #ff6600; margin-bottom: 15px; }
 .card p { font-size: 1rem; color: #555; margin-bottom: 15px; }
 .counter { color: #ff6600; font-weight: bold; font-size: 1.3rem; }
+
+/* New Style for "Learn More" Button in Cards */
+.card-button {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #ff6600;
+  color: #fff;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.card-button:hover {
+  background: #fff;
+  color: #ff6600;
+  border: 2px solid #ff6600;
+}
 
 /* Wave */
 .wave { background: #ff6600; }
