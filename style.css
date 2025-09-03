@@ -36,7 +36,7 @@
 .slides { position: relative; height: 100%; }
 .slide { opacity: 0; transition: opacity 1s ease-in-out; position: absolute; width: 100%; height: 100%; }
 .slide.active { opacity: 1; position: relative; }
-.slide img { width: 100%; height: 100%; object-fit: cover Studies.; background: #000; border-radius: 20px; }
+.slide img { width: 100%; height: 100%; object-fit: cover; background: #000; border-radius: 20px; }
 .dots { display: flex; justify-content: center; position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); }
 .dot { width: 12px; height: 12px; border-radius: 50%; background: #fff; margin: 0 5px; cursor: pointer; opacity: 0.6; }
 .dot.active { background: #ff6600; opacity: 1; }
@@ -57,20 +57,44 @@
 .wave { background: #ff6600; }
 
 /* Stories */
-/* .stories { background: #ff6600; padding: 60px 40px; text-align: center; color: #fff; }
+.stories { background: #ff6600; padding: 60px 40px; text-align: center; color: #fff; }
 .stories h2 { font-size: 2.5rem; margin-bottom: 40px; }
 .story-carousel-wrapper { display: flex; align-items: center; justify-content: center; position: relative; max-width: 1200px; margin: auto; }
 .story-carousel { display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; scrollbar-width: none; }
 .story-carousel::-webkit-scrollbar { display: none; }
-.story-box { background: #fff; color: #333; border-radius: 15px; padding: 10px; min-width: 250px; max-width: 250px; 0 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.3s; }
+.story-box { background: #fff; color: #333; border-radius: 15px; padding: 10px; min-width: 250px; max-width: 250px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.3s; }
 .story-box:hover { transform: scale(1.05); }
 .story-media { width: 100%; height: 320px; position: relative; border-radius: 10px; overflow: hidden; }
-.story-thumb, .story-video { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+
+/* Fix to show video on hover */
+.story-thumb, .story-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.story-video {
+  opacity: 0;
+}
+
+.story-box:hover .story-video {
+  opacity: 1;
+}
+
+.story-box:hover .story-thumb {
+  opacity: 0;
+}
+
 .story-caption { margin-top: 10px; font-size: 1rem; }
 .arrow { background: rgba(0,0,0,0.4); border: none; color: #fff; font-size: 2rem; padding: 10px; border-radius: 50%; cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
 .left-arrow { left: -20px; }
 .right-arrow { right: -20px; }
-.unmute-overlay { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.6); color: #fff; font-size: 0.9rem; padding: 5px 10px; border-radius: 5px; display: none; } */
+.unmute-overlay { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.6); color: #fff; font-size: 0.9rem; padding: 5px 10px; border-radius: 5px; z-index: 6; }
 
 /* Footer */
 .footer { background: #222; color: #ccc; padding: 50px 40px 20px; }
@@ -93,154 +117,118 @@
 
 /* Responsive Fixes */
 @media (max-width: 768px) {
-  .hero { flex-direction: column; padding: 40px 20px; text-align: center; }
-  .hero-content { padding: 0; margin-bottom: 20px; }
-  .hero-content h1 { font-size: 2rem; }
-  .hero-content h2 { font-size: 1.4rem; }
-  .hero-slider-wrapper { width: 100%; max-width: 100%; }
-  .hero-slider { height: 200px; }
-  .nav-links { position: absolute; top: 70px; right: 0; background: #ff6600; flex-direction: column; width: 220px; padding: 20px; gap: 15px; display: none; }
-  .nav-links.active { display: flex; }
-  .hamburger { display: block; }
-  .info-cards { grid-template-columns: 1fr; padding: 40px 10px; }
-  .card { max-width: 100%; }
-  .story-carousel { gap: 10px; max-width: 100%; }
-  .story-box { flex: 0 0 80%; }
-  .arrow { display: none; }
+    /* Main container adjustments */
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    /* Hero content improvements */
+    .hero-content {
+        padding: 0;
+        margin-bottom: 30px;
+        text-align: left; 
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.4rem;
+        margin: 20px 0;
+        text-align: center; 
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    /* Button group */
+    .btn-group {
+        justify-content: center; 
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Slider adjustments */
+    .hero-slider-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-slider {
+        height: 250px; 
+    }
+
+    /* Navbar fixes */
+    .nav-links { 
+        position: fixed; 
+        top: 85px; 
+        right: 20px;
+        background: rgba(255, 102, 0, 0.95);
+        border-radius: 10px;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        gap: 15px;
+        display: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(120%);
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Other sections */
+    .info-cards { 
+        grid-template-columns: 1fr; 
+        padding: 40px 10px; 
+    }
+    
+    .card { 
+        max-width: 100%; 
+    }
+
+    .story-carousel { 
+        gap: 10px; 
+        max-width: 100%; 
+    }
+
+    .story-box { 
+        flex: 0 0 80%; 
+    }
+    
+    .arrow { 
+        display: none; 
+    }
 }
 
 @media (max-width: 420px) {
-  .logo-text { display: none; }
-  .logo-box { min-width: 40px; min-height: 40px; padding: 4px; }
-  .logo-video { height: 30px; }
-}
+    .logo-text {
+        display: none;
+    }
 
-/* Stories Section - Updated CSS */
+    .logo-box {
+        min-width: 40px;
+        min-height: 40px;
+        padding: 4px;
+    }
 
-.stories {
-  background: #ff6600;
-  padding: 60px 40px;
-  text-align: center;
-  color: #fff;
-}
-
-.stories h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
-.story-carousel-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.story-carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 20px;
-  scrollbar-width: none;
-}
-
-.story-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.story-box {
-  background: #fff;
-  color: #333;
-  border-radius: 15px;
-  padding: 10px;
-  min-width: 250px;
-  max-width: 250px;
-  flex-shrink: 0; /* Add this to prevent shrinking */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s;
-}
-
-.story-box:hover {
-  transform: scale(1.05);
-}
-
-.story-media {
-  width: 100%;
-  height: 320px;
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.story-thumb,
-.story-video {
-  position: absolute; /* Position them absolutely to control stacking */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: opacity 0.3s ease-in-out; /* Add a fade transition */
-}
-
-/* Initially hide the video */
-.story-video {
-  opacity: 0;
-}
-
-/* When the parent box is hovered, show the video and hide the thumb */
-.story-box:hover .story-video {
-  opacity: 1;
-}
-
-.story-box:hover .story-thumb {
-  opacity: 0;
-}
-
-.story-caption {
-  margin-top: 10px;
-  font-size: 1rem;
-}
-
-.arrow {
-  background: rgba(0, 0, 0, 0.4);
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-}
-
-.left-arrow {
-  left: -20px;
-}
-
-.right-arrow {
-  right: -20px;
-}
-
-.unmute-overlay {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 0.9rem;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: block; /* Make it always visible initially */
-  z-index: 6;
-}
-
-/* Hide the overlay on hover */
-.story-box:hover .unmute-overlay {
-  display: none;
+    .logo-video {
+        height: 30px;
+    }
 }
