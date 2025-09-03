@@ -57,7 +57,7 @@
 .wave { background: #ff6600; }
 
 /* Stories */
-.stories { background: #ff6600; padding: 60px 40px; text-align: center; color: #fff; }
+/* .stories { background: #ff6600; padding: 60px 40px; text-align: center; color: #fff; }
 .stories h2 { font-size: 2.5rem; margin-bottom: 40px; }
 .story-carousel-wrapper { display: flex; align-items: center; justify-content: center; position: relative; max-width: 1200px; margin: auto; }
 .story-carousel { display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; scrollbar-width: none; }
@@ -70,7 +70,7 @@
 .arrow { background: rgba(0,0,0,0.4); border: none; color: #fff; font-size: 2rem; padding: 10px; border-radius: 50%; cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
 .left-arrow { left: -20px; }
 .right-arrow { right: -20px; }
-.unmute-overlay { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.6); color: #fff; font-size: 0.9rem; padding: 5px 10px; border-radius: 5px; display: none; }
+.unmute-overlay { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.6); color: #fff; font-size: 0.9rem; padding: 5px 10px; border-radius: 5px; display: none; } */
 
 /* Footer */
 .footer { background: #222; color: #ccc; padding: 50px 40px 20px; }
@@ -113,4 +113,134 @@
   .logo-text { display: none; }
   .logo-box { min-width: 40px; min-height: 40px; padding: 4px; }
   .logo-video { height: 30px; }
+}
+
+/* Stories Section - Updated CSS */
+
+.stories {
+  background: #ff6600;
+  padding: 60px 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.stories h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.story-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.story-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  scrollbar-width: none;
+}
+
+.story-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.story-box {
+  background: #fff;
+  color: #333;
+  border-radius: 15px;
+  padding: 10px;
+  min-width: 250px;
+  max-width: 250px;
+  flex-shrink: 0; /* Add this to prevent shrinking */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.story-box:hover {
+  transform: scale(1.05);
+}
+
+.story-media {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.story-thumb,
+.story-video {
+  position: absolute; /* Position them absolutely to control stacking */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out; /* Add a fade transition */
+}
+
+/* Initially hide the video */
+.story-video {
+  opacity: 0;
+}
+
+/* When the parent box is hovered, show the video and hide the thumb */
+.story-box:hover .story-video {
+  opacity: 1;
+}
+
+.story-box:hover .story-thumb {
+  opacity: 0;
+}
+
+.story-caption {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.arrow {
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.left-arrow {
+  left: -20px;
+}
+
+.right-arrow {
+  right: -20px;
+}
+
+.unmute-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block; /* Make it always visible initially */
+  z-index: 6;
+}
+
+/* Hide the overlay on hover */
+.story-box:hover .unmute-overlay {
+  display: none;
 }
