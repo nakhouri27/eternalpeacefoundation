@@ -199,6 +199,17 @@
     <a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?edit_requested=true" target="_blank" class="btn secondary">Join as Volunteer</a>
   </div>
 
+  <div id="event-popup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <div class="popup-message">
+        <h2>Upcoming Event</h2>
+        <p>New events are in the works! Stay tuned for more details.</p>
+        <a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?edit_requested=true" target="_blank" class="btn primary volunteer-link">Join Us</a>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Navbar scroll effect
     window.addEventListener("scroll", () => {
@@ -327,6 +338,41 @@
         stickyCta.classList.add('visible');
       } else {
         stickyCta.classList.remove('visible');
+      }
+    });
+
+    // --- Pop-up Functionality ---
+    function showPopup() {
+      const popup = document.getElementById("event-popup");
+      popup.style.display = "flex";
+      setTimeout(() => popup.classList.add('active'), 10);
+    }
+
+    function hidePopup() {
+      const popup = document.getElementById("event-popup");
+      popup.classList.remove('active');
+      setTimeout(() => popup.style.display = "none", 300);
+    }
+
+    const eventsLinks = document.querySelectorAll('a[href="#"]');
+    eventsLinks.forEach(link => {
+      if (link.textContent.trim() === 'Events') {
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+          showPopup();
+        });
+      }
+    });
+
+    const closeBtn = document.querySelector('.close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener("click", hidePopup);
+    }
+
+    const popupOverlay = document.getElementById("event-popup");
+    popupOverlay.addEventListener("click", function(e) {
+      if (e.target === popupOverlay) {
+        hidePopup();
       }
     });
   </script>
