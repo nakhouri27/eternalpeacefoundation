@@ -112,18 +112,17 @@
 
 /* --- Event Pop-up Styles --- */
 .popup-overlay {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stays in place when scrolling */
-  z-index: 1000; /* High z-index to be on top of other content */
+  display: none; /* This correctly hides the pop-up by default */
+  position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
-  display: flex; /* Use flexbox to center content */
+  background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
-  opacity: 0; /* Start hidden for fade-in */
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
