@@ -105,6 +105,105 @@
 .social-icons a img { width: 25px; margin-right: 10px; }
 .footer-bottom { text-align: center; margin-top: 30px; font-size: 0.9rem; color: #888; }
 
+/* Adds margin to the social icons in the footer */
+.footer-contact .social-icons {
+  margin-top: 15px;
+}
+
+/* --- Event Pop-up Styles --- */
+.popup-overlay {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stays in place when scrolling */
+  z-index: 1000; /* High z-index to be on top of other content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Start hidden for fade-in */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup-overlay.active {
+  opacity: 1; /* Fade in */
+}
+
+.popup-content {
+  background: linear-gradient(135deg, #fff, #ffe0cc); /* Soft gradient background */
+  padding: 3em; /* More padding */
+  border-radius: 15px; /* Slightly more rounded corners */
+  max-width: 90%;
+  width: 450px; /* Slightly wider */
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  transform: scale(0.8); /* Start smaller for pop-in effect */
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Bouncy transition */
+  border: 2px solid #ff6600; /* Distinct border */
+}
+
+.popup-overlay.active .popup-content {
+  transform: scale(1); /* Pop into full size */
+}
+
+.popup-content h2 {
+  color: #ff6600; /* Main brand color */
+  font-size: 2.2em; /* Larger title */
+  margin-top: 0;
+  margin-bottom: 0.8em; /* More space below title */
+  font-weight: 700; /* Bolder title */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow */
+}
+
+.popup-content p {
+  margin: 0.8em 0; /* More vertical space for paragraphs */
+  font-size: 1.2em; /* Larger font size for readability */
+  color: #444; /* Slightly darker text */
+  line-height: 1.5;
+}
+
+.popup-content p strong {
+    color: #cc4d00; /* Highlight important text */
+}
+
+.popup-content .volunteer-link {
+  margin-top: 2em; /* More space above the button */
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ff6600; /* Primary button color */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+}
+
+.popup-content .volunteer-link:hover {
+  background-color: #cc4d00; /* Darker on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px; /* Adjusted position */
+  right: 20px; /* Adjusted position */
+  font-size: 2.5em; /* Larger close button */
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ff6600; /* Brand color on hover */
+  transform: rotate(90deg); /* Spin on hover */
+}
+
 /* Animations */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
@@ -182,15 +281,24 @@
         border-radius: 5px;
         margin: 0 5px;
     }
+    /* Pop-up adjustments for smaller screens */
+    .popup-content {
+      padding: 2em; /* Reduce padding on small screens */
+      width: 95%; /* Allow it to take more width */
+    }
+    .popup-content h2 {
+      font-size: 1.8em; /* Smaller title on small screens */
+    }
+    .popup-content p {
+      font-size: 1em; /* Smaller text on small screens */
+    }
+    .close-btn {
+      font-size: 2em; /* Smaller close button on small screens */
+    }
 }
 
 @media (max-width: 420px) {
     .logo-text { display: none; }
     .logo-box { min-width: 40px; min-height: 40px; padding: 4px; }
     .logo-video { height: 30px; }
-}
-
-/* Adds margin to the social icons in the footer */
-.footer-contact .social-icons {
-  margin-top: 15px; /* Adjust this value to control the spacing */
 }
