@@ -6,10 +6,61 @@
 .navbar.scrolled { background: #ff6600; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
 
 /* Logo + video */
-.logo { display: flex; align-items: center; gap: 12px; }
+/* .logo { display: flex; align-items: center; gap: 12px; }
 .logo-box { background: #fff; padding: 8px 15px; border-radius: 45px; display: flex; align-items: center; justify-content: center; min-width: 60px; min-height: 60px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-.logo-video { height: 65px; width: auto; object-fit: cover; border-radius: 35px; }
+.logo-video { height: 65px; width: auto; object-fit: cover; border-radius: 35px; } */
 .logo-text { font-size: 2.15rem; font-weight: 700; color: #fff; white-space: nowrap; }
+
+/* --- REFINED LOGO STYLES --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between image and text */
+}
+
+/* REFINED LOGO STYLES */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* REFINED LOGO STYLES */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-box {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #ff6600, 0 8px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* .logo-text {
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: #fff;
+} */
+
+
+.logo-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
 
 /* Navbar links */
 .nav-links { list-style: none; display: flex; gap: 20px; }
