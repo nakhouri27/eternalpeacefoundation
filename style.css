@@ -64,7 +64,6 @@
   transition: all 0.3s ease;
   margin-top: 15px;
 }
-
 .card-button:hover {
   background: #fff;
   color: #ff6600;
@@ -107,125 +106,57 @@
 .footer-contact .social-icons { margin-top: 15px; }
 
 /* --- Event Pop-up Styles --- */
-.popup-overlay {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
+.popup-overlay { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease-in-out; }
 .popup-overlay.active { opacity: 1; }
-.popup-content {
-  background: linear-gradient(135deg, #fff, #ffe0cc);
-  padding: 3em;
-  border-radius: 15px;
-  max-width: 90%;
-  width: 450px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  transform: scale(0.8);
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  border: 2px solid #ff6600;
-}
+.popup-content { background: linear-gradient(135deg, #fff, #ffe0cc); padding: 3em; border-radius: 15px; max-width: 90%; width: 450px; text-align: center; position: relative; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); transform: scale(0.8); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); border: 2px solid #ff6600; }
 .popup-overlay.active .popup-content { transform: scale(1); }
-.popup-content h2 {
-  color: #ff6600;
-  font-size: 2.2em;
-  margin-top: 0;
-  margin-bottom: 0.8em;
-  font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-.popup-content p {
-  margin: 0.8em 0;
-  font-size: 1.2em;
-  color: #444;
-  line-height: 1.5;
-}
+.popup-content h2 { color: #ff6600; font-size: 2.2em; margin-top: 0; margin-bottom: 0.8em; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+.popup-content p { margin: 0.8em 0; font-size: 1.2em; color: #444; line-height: 1.5; }
 .popup-content p strong { color: #cc4d00; }
-.popup-content .volunteer-link {
-  margin-top: 2em;
-  display: inline-block;
-  text-decoration: none;
-  background-color: #ff6600;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-size: 1.1em;
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
-}
-.popup-content .volunteer-link:hover {
-  background-color: #cc4d00;
-  transform: translateY(-2px);
-}
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #999;
-  cursor: pointer;
-  transition: color 0.2s ease-in-out, transform 0.2s ease;
-}
-.close-btn:hover {
-  color: #ff6600;
-  transform: rotate(90deg);
-}
+.popup-content .volunteer-link { margin-top: 2em; display: inline-block; text-decoration: none; background-color: #ff6600; color: #fff; padding: 12px 25px; border-radius: 30px; font-size: 1.1em; font-weight: 600; transition: background-color 0.3s ease, transform 0.2s ease; box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3); }
+.popup-content .volunteer-link:hover { background-color: #cc4d00; transform: translateY(-2px); }
+.close-btn { position: absolute; top: 15px; right: 20px; font-size: 2.5em; font-weight: bold; color: #999; cursor: pointer; transition: color 0.2s ease-in-out, transform 0.2s ease; }
+.close-btn:hover { color: #ff6600; transform: rotate(90deg); }
 
 /* Animations */
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+@keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
 /* Responsive Fixes */
 @media (max-width: 768px) {
     /* Main container adjustments */
     .hero { flex-direction: column; padding: 40px 20px; text-align: center; }
-    /* Hero content improvements */
     .hero-content { padding: 0; margin-bottom: 30px; text-align: left; }
     .hero-content h1 { font-size: 2.2rem; margin-bottom: 15px; }
     .hero-content h2 { font-size: 1.4rem; margin: 20px 0; text-align: center; }
     .hero-content p { font-size: 1rem; margin-bottom: 15px; }
-    /* Button group */
     .btn-group { justify-content: center; }
     .btn { padding: 10px 20px; font-size: 0.9rem; }
-    /* Slider adjustments */
     .hero-slider-wrapper { width: 100%; max-width: 100%; }
     .hero-slider { height: 250px; }
+
     /* Navbar fixes */
+    .navbar { padding: 10px 20px; }
+    .logo-box { width: 60px; height: 60px; }
+    .logo-text { font-size: 1.2rem; }
     .nav-links { 
         position: fixed; 
-        top: 85px; 
-        right: 20px;
+        top: 70px; 
+        right: 10px;
         background: rgba(255, 102, 0, 0.95);
         border-radius: 10px;
         flex-direction: column;
-        width: 200px;
-        padding: 20px;
-        gap: 15px;
+        width: 180px;
+        padding: 15px;
+        gap: 12px;
         display: none;
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         transition: transform 0.3s ease-in-out;
         transform: translateX(120%);
     }
-    .nav-links.active {
-        display: flex;
-        transform: translateX(0);
-    }
+    .nav-links.active { display: flex; transform: translateX(0); }
+    .nav-links a { font-size: 0.95rem; padding: 8px 0; }
     .hamburger { display: block; }
+
     /* Other sections */
     .info-cards { grid-template-columns: 1fr; padding: 40px 10px; }
     .card { max-width: 100%; }
@@ -234,249 +165,28 @@
     .arrow { display: none; }
 
     /* Sticky CTA for Mobile */
-    #sticky-mobile-cta {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #ff6600;
-        padding: 10px;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-        transform: translateY(100%);
-        transition: transform 0.3s ease-in-out;
-    }
-    #sticky-mobile-cta.visible {
-        transform: translateY(0);
-    }
-    #sticky-mobile-cta .btn {
-        flex: 1;
-        text-align: center;
-        font-size: 0.9rem;
-        padding: 12px 10px;
-        border-radius: 5px;
-        margin: 0 5px;
-    }
-    /* Pop-up adjustments for smaller screens */
-    .popup-content {
-      padding: 2em;
-      width: 95%;
-    }
-    .popup-content h2 {
-      font-size: 1.8em;
-    }
-    .popup-content p {
-      font-size: 1em;
-    }
-    .close-btn {
-      font-size: 2em;
-    }
+    #sticky-mobile-cta { display: flex; justify-content: space-around; align-items: center; position: fixed; bottom: 0; left: 0; width: 100%; background-color: #ff6600; padding: 10px; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); z-index: 999; transform: translateY(100%); transition: transform 0.3s ease-in-out; }
+    #sticky-mobile-cta.visible { transform: translateY(0); }
+    #sticky-mobile-cta .btn { flex: 1; text-align: center; font-size: 0.9rem; padding: 12px 10px; border-radius: 5px; margin: 0 5px; }
+
+    /* Pop-up adjustments */
+    .popup-content { padding: 2em; width: 95%; }
+    .popup-content h2 { font-size: 1.8em; }
+    .popup-content p { font-size: 1em; }
+    .close-btn { font-size: 2em; }
+
+    /* Banner mobile fix */
+    .banner { min-height: unset; }
+    .banner-slider img { height: 200px; object-fit: cover; }
 }
 
 @media (max-width: 420px) {
     .logo-text { display: none; }
-    .logo-box { min-width: 40px; min-height: 40px; padding: 4px; }
-}
-
-
-/* --- Banner Image Section (STATIC - NO ANIMATION) --- */
-/*
-    This code removes the automatic sliding animation.
-    The banner will now only show the first image and will be static.
-*/
-.banner {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    /* This min-height is important to prevent content from jumping */
-    min-height: 250px;
-}
-
-.banner-slider {
-    /* No animation properties are needed here anymore */
-    display: flex;
-    /* Width is set to 100% to only show the first image */
-    width: 100%;
-}
-
-.banner-slider img {
-    /* Each image will take up 100% of the banner-slider container,
-       but since the container width is now 100% of the viewport,
-       only the first image will be visible. */
-    width: 100%;
-    height: auto;
-    flex-shrink: 0;
-}
-
-.banner-slide {
-    flex-shrink: 0;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 550px;
-    overflow: hidden;
-}
-
-.banner-slide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-}
-
-.banner-content {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 40px;
-}
-
-.banner-text {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: left;
-}
-
-.banner-main-title {
-    font-family: 'Times New Roman', serif;
-    font-size: 5rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-right: 50px;
-    flex-shrink: 0;
-}
-
-.banner-cta {
-    text-align: right;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-right: 20px;
-}
-
-.banner-cta p {
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-.banner-highlight {
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 1.2;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.donate-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 30px;
-    background-color: #ffc04c;
-    color: #333;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.donate-btn:hover {
-    background-color: #ffdf99;
-    transform: translateY(-2px);
-}
-
-.slider-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    gap: 10px;
-}
-
-.slider-dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.slider-dot.active {
-    background-color: #ff6600;
-    transform: scale(1.2);
-}
-
-/* Mobile Responsiveness for Banner */
-@media (max-width: 768px) {
-    .banner-content {
-      flex-direction: column;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .banner-text {
-      flex-direction: column;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .banner-main-title {
-      font-size: 3rem;
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
-
-    .banner-cta {
-      text-align: center;
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
-
-    .banner-highlight {
-      font-size: 1.8rem;
-    }
-
-    .donate-btn {
-      font-size: 1rem;
-      padding: 10px 25px;
-    }
+    .logo-box { width: 45px; height: 45px; }
+    .banner-slider img { height: 160px; }
 }
 
 /* --- Banner Image Section --- */
-.banner {
-    width: 100%;
-    background-color: #ff6600;
-    overflow: hidden;
-}
-
-.banner img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* --- Mobile-Only Changes --- */
-/* This section only applies to screens smaller than 768px */
-@media (max-width: 768px) {
-    .banner {
-        /* This rule overrides the desktop min-height to remove the orange gap on mobile */
-        min-height: 180px;
-    }
-}
+.banner { width: 100%; background-color: #ff6600; overflow: hidden; }
+.banner-slider { display: flex; width: 100%; }
+.banner-slider img { width: 100%; height: auto; flex-shrink: 0; display: block; object-fit: cover; }
