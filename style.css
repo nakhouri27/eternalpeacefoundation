@@ -5,62 +5,11 @@
 .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: rgba(255, 102, 0, 0.9); color: #fff; position: sticky; top: 0; z-index: 1000; transition: background 0.3s, box-shadow 0.3s; }
 .navbar.scrolled { background: #ff6600; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
 
-/* Logo + video */
-/* .logo { display: flex; align-items: center; gap: 12px; }
-.logo-box { background: #fff; padding: 8px 15px; border-radius: 45px; display: flex; align-items: center; justify-content: center; min-width: 60px; min-height: 60px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-.logo-video { height: 65px; width: auto; object-fit: cover; border-radius: 35px; } */
+/* Logo */
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-box { width: 100px; height: 100px; background-color: #ffffff; border-radius: 50%; box-shadow: 0 0 0 3px #ff6600, 0 8px 15px rgba(0, 0, 0, 0.2); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.logo-img { max-width: 90%; max-height: 90%; object-fit: contain; }
 .logo-text { font-size: 2.15rem; font-weight: 700; color: #fff; white-space: nowrap; }
-
-/* --- REFINED LOGO STYLES --- */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* space between image and text */
-}
-
-/* REFINED LOGO STYLES */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-/* REFINED LOGO STYLES */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-box {
-  width: 100px;
-  height: 100px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 0 0 3px #ff6600, 0 8px 15px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.logo-img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
-
-/* .logo-text {
-  font-size: 1.9rem;
-  font-weight: bold;
-  color: #fff;
-} */
-
-
-.logo-img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
 
 /* Navbar links */
 .nav-links { list-style: none; display: flex; gap: 20px; }
@@ -155,15 +104,11 @@
 .footer-links a:hover { text-decoration: underline; }
 .social-icons a img { width: 25px; margin-right: 10px; }
 .footer-bottom { text-align: center; margin-top: 30px; font-size: 0.9rem; color: #888; }
-
-/* Adds margin to the social icons in the footer */
-.footer-contact .social-icons {
-  margin-top: 15px;
-}
+.footer-contact .social-icons { margin-top: 15px; }
 
 /* --- Event Pop-up Styles --- */
 .popup-overlay {
-  display: none; /* This correctly hides the pop-up by default */
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -176,54 +121,41 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-
-.popup-overlay.active {
-  opacity: 1; /* Fade in */
-}
-
+.popup-overlay.active { opacity: 1; }
 .popup-content {
-  background: linear-gradient(135deg, #fff, #ffe0cc); /* Soft gradient background */
-  padding: 3em; /* More padding */
-  border-radius: 15px; /* Slightly more rounded corners */
+  background: linear-gradient(135deg, #fff, #ffe0cc);
+  padding: 3em;
+  border-radius: 15px;
   max-width: 90%;
-  width: 450px; /* Slightly wider */
+  width: 450px;
   text-align: center;
   position: relative;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-  transform: scale(0.8); /* Start smaller for pop-in effect */
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Bouncy transition */
-  border: 2px solid #ff6600; /* Distinct border */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 2px solid #ff6600;
 }
-
-.popup-overlay.active .popup-content {
-  transform: scale(1); /* Pop into full size */
-}
-
+.popup-overlay.active .popup-content { transform: scale(1); }
 .popup-content h2 {
-  color: #ff6600; /* Main brand color */
-  font-size: 2.2em; /* Larger title */
+  color: #ff6600;
+  font-size: 2.2em;
   margin-top: 0;
-  margin-bottom: 0.8em; /* More space below title */
-  font-weight: 700; /* Bolder title */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow */
+  margin-bottom: 0.8em;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
-
 .popup-content p {
-  margin: 0.8em 0; /* More vertical space for paragraphs */
-  font-size: 1.2em; /* Larger font size for readability */
-  color: #444; /* Slightly darker text */
+  margin: 0.8em 0;
+  font-size: 1.2em;
+  color: #444;
   line-height: 1.5;
 }
-
-.popup-content p strong {
-    color: #cc4d00; /* Highlight important text */
-}
-
+.popup-content p strong { color: #cc4d00; }
 .popup-content .volunteer-link {
-  margin-top: 2em; /* More space above the button */
+  margin-top: 2em;
   display: inline-block;
   text-decoration: none;
-  background-color: #ff6600; /* Primary button color */
+  background-color: #ff6600;
   color: #fff;
   padding: 12px 25px;
   border-radius: 30px;
@@ -232,26 +164,23 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
 }
-
 .popup-content .volunteer-link:hover {
-  background-color: #cc4d00; /* Darker on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #cc4d00;
+  transform: translateY(-2px);
 }
-
 .close-btn {
   position: absolute;
-  top: 15px; /* Adjusted position */
-  right: 20px; /* Adjusted position */
-  font-size: 2.5em; /* Larger close button */
+  top: 15px;
+  right: 20px;
+  font-size: 2.5em;
   font-weight: bold;
   color: #999;
   cursor: pointer;
   transition: color 0.2s ease-in-out, transform 0.2s ease;
 }
-
 .close-btn:hover {
-  color: #ff6600; /* Brand color on hover */
-  transform: rotate(90deg); /* Spin on hover */
+  color: #ff6600;
+  transform: rotate(90deg);
 }
 
 /* Animations */
@@ -333,232 +262,212 @@
     }
     /* Pop-up adjustments for smaller screens */
     .popup-content {
-      padding: 2em; /* Reduce padding on small screens */
-      width: 95%; /* Allow it to take more width */
+      padding: 2em;
+      width: 95%;
     }
     .popup-content h2 {
-      font-size: 1.8em; /* Smaller title on small screens */
+      font-size: 1.8em;
     }
     .popup-content p {
-      font-size: 1em; /* Smaller text on small screens */
+      font-size: 1em;
     }
     .close-btn {
-      font-size: 2em; /* Smaller close button on small screens */
+      font-size: 2em;
     }
 }
 
 @media (max-width: 420px) {
     .logo-text { display: none; }
     .logo-box { min-width: 40px; min-height: 40px; padding: 4px; }
-    .logo-video { height: 30px; }
 }
 
 
-Banner Section
-
+/* --- Banner Image Section (STATIC - NO ANIMATION) --- */
+/*
+    This code removes the automatic sliding animation.
+    The banner will now only show the first image and will be static.
+*/
 .banner {
     width: 100%;
     overflow: hidden;
     position: relative;
-  }
-
-  .banner-slider {
-    display: flex;
-    width: 300%; /* Number of images x 100 */
-    animation: slide 12s infinite;
-  }
-
-  .banner-slider img {
-    width: 100%;
-    height: auto;
-    flex-shrink: 0;
-  }
-
-  @keyframes slide {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(0); }
-    40% { transform: translateX(-100%); }
-    73% { transform: translateX(-100%); }
-    80% { transform: translateX(-200%); }
-    100% { transform: translateX(-200%); }
-  }
-
-.banner {
-  position: relative;
-  background-color: #f0f0f0;
-  padding: 0;
-  min-height: 400px;
-  overflow: hidden;
+    /* This min-height is important to prevent content from jumping */
+    min-height: 250px;
 }
 
 .banner-slider {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: transform 0.5s ease-in-out;
+    /* No animation properties are needed here anymore */
+    display: flex;
+    /* Width is set to 100% to only show the first image */
+    width: 100%;
+}
+
+.banner-slider img {
+    /* Each image will take up 100% of the banner-slider container,
+       but since the container width is now 100% of the viewport,
+       only the first image will be visible. */
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
 }
 
 .banner-slide {
-  flex-shrink: 0;
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 550px; /* INCREASE THIS VALUE as desired, e.g., from 400px to 550px */
-  overflow: hidden;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 550px;
+    overflow: hidden;
 }
 
-/* Also ensure your main .banner section's min-height is sufficient if it's the ultimate constraint */
-
-
 .banner-slide img {
-  width: 100%;
-  height: auto; /* Changed from 100% to auto to maintain aspect ratio */
-  object-fit: cover; /* Changed from 'cover' to 'contain' */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centered image */
-  z-index: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
 }
 
 .banner-content {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 40px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 40px;
 }
 
 .banner-text {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: left;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
 }
 
 .banner-main-title {
-  font-family: 'Times New Roman', serif;
-  font-size: 5rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  margin-right: 50px;
-  flex-shrink: 0;
+    font-family: 'Times New Roman', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-right: 50px;
+    flex-shrink: 0;
 }
 
 .banner-cta {
-  text-align: right;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  margin-right: 20px;
+    text-align: right;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-right: 20px;
 }
 
 .banner-cta p {
-  color: #fff;
-  margin-bottom: 5px;
+    color: #fff;
+    margin-bottom: 5px;
 }
 
 .banner-highlight {
-  font-size: 2.5rem;
-  font-weight: bold;
-  line-height: 1.2;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .donate-btn {
-  display: inline-block;
-  padding: 12px 30px;
-  border-radius: 30px;
-  background-color: #ffc04c;
-  color: #333;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  white-space: nowrap;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    background-color: #ffc04c;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .donate-btn:hover {
-  background-color: #ffdf99;
-  transform: translateY(-2px);
+    background-color: #ffdf99;
+    transform: translateY(-2px);
 }
 
 .slider-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  display: flex;
-  gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 10px;
 }
 
 .slider-dot {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .slider-dot.active {
-  background-color: #ff6600;
-  transform: scale(1.2);
+    background-color: #ff6600;
+    transform: scale(1.2);
 }
 
 /* Mobile Responsiveness for Banner */
 @media (max-width: 768px) {
-  .banner-content {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 20px;
-  }
+    .banner-content {
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+    }
 
-  .banner-text {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+    .banner-text {
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-  .banner-main-title {
-    font-size: 3rem;
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
+    .banner-main-title {
+      font-size: 3rem;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
 
-  .banner-cta {
-    text-align: center;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
+    .banner-cta {
+      text-align: center;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
 
-  .banner-highlight {
-    font-size: 1.8rem;
-  }
+    .banner-highlight {
+      font-size: 1.8rem;
+    }
 
-  .donate-btn {
-    font-size: 1rem;
-    padding: 10px 25px;
-  }
+    .donate-btn {
+      font-size: 1rem;
+      padding: 10px 25px;
+    }
 }
 
 /* --- Banner Image Section --- */
 .banner {
-width: 100%;
-background-color: #ff6600; /* A fallback color in case the image doesn't load */
-overflow: hidden;
+    width: 100%;
+    background-color: #ff6600;
+    overflow: hidden;
 }
 
 .banner img {
-display: block;
-width: 100%;
-height: auto;
-object-fit: cover;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
