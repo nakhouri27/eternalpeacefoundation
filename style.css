@@ -558,184 +558,146 @@ body {
     margin: 0;
 }
 
-/* OUR IMPACTS */
+/* "OUR IMPACTS" Section */
 .stories {
-    background: #ff6600;
-    padding: 60px 40px;
+    background-color: #ff781f; /* A vibrant orange background to match the image */
+    padding: 60px 0;
     text-align: center;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-}
-
-.stories::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: #ff6600;
-    transform: skewY(-4deg);
-    transform-origin: top left;
-    box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .stories h2 {
-    font-size: 2.5rem;
+    color: #fff; /* White text for the heading */
+    font-size: 2.5em;
+    font-weight: 700;
     margin-bottom: 40px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
 .story-carousel-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 50px; /* Add some padding for the arrows */
 }
 
 .story-carousel {
     display: flex;
-    overflow-x: auto;
+    overflow-x: auto; /* Enables horizontal scrolling */
     scroll-behavior: smooth;
     gap: 20px;
-    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 
+/* Hide scrollbar for Chrome, Safari, and Opera */
 .story-carousel::-webkit-scrollbar {
     display: none;
 }
 
 .story-box {
-    background: #fff;
-    color: #333;
+    flex-shrink: 0; /* Prevents items from shrinking */
+    width: 280px; /* Set a fixed width for each box */
+    background-color: #fff;
     border-radius: 15px;
-    padding: 10px;
-    min-width: 250px;
-    max-width: 250px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures the image doesn't overflow the rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align caption to the bottom */
 }
 
 .story-box:hover {
-    transform: scale(1.05);
-}
-
-/* Keep the box width and padding consistent */
-.story-box {
-    background: #fff;
-    color: #333;
-    border-radius: 15px;
-    padding: 10px;
-    min-width: 250px;
-    max-width: 250px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s;
-}
-
-/* All of the existing carousel CSS remains the same */
-
-/* THE KEY CHANGES ARE WITHIN THE .story-media and .story-thumb CLASSES */
-
-/* All of your existing CSS remains the same, except for these modifications: */
-
-.story-box {
-    background: #fff;
-    color: #333;
-    border-radius: 15px; /* Keep this for the outer box */
-    padding: 10px;
-    min-width: 250px;
-    max-width: 250px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s;
+    transform: translateY(-10px); /* Lift the card on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
 }
 
 .story-media {
     width: 100%;
-    height: 320px;
+    height: 200px; /* Consistent height for all images */
+    overflow: hidden;
     position: relative;
-    
-    /* --- ADD/MODIFY THIS FOR CURVED CORNERS --- */
-    border-radius: 10px; /* This will make the inside box corners curved */
-    /* ------------------------------------------ */
-
-    overflow: hidden; /* Essential to ensure the image also respects the curve */
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0; 
 }
 
 .story-thumb {
-    object-fit: contain; 
-    max-width: 100%;
-    max-height: 100%;
-    
-    /* --- ADD THIS TO MAKE THE IMAGE CORNERS CURVED AS WELL --- */
-    border-radius: 8px; /* Slightly smaller than story-media for a subtle effect, or match it */
-    /* -------------------------------------------------------- */
-}
-
-/* ... (rest of your CSS, including video removal if already applied) ... */
-.story-caption {
-    margin-top: 10px;
-    font-size: 1rem;
-}
-
-.arrow {
-    background: rgba(0, 0, 0, 0.4);
-    border: none;
-    color: #fff;
-    font-size: 2rem;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-}
-
-.left-arrow {
-    left: -20px;
-}
-
-.right-arrow {
-    right: -20px;
-}
-
-/* Remove .unmute-overlay and video-related hover effects */
-/*
-.story-video {
-    opacity: 0;
-}
-
-.story-box:hover .story-video {
-    opacity: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the container without distortion */
+    object-position: center;
+    transition: transform 0.3s ease;
 }
 
 .story-box:hover .story-thumb {
-    opacity: 0;
+    transform: scale(1.1); /* Zoom effect on image hover */
 }
 
-.unmute-overlay {
+.story-caption {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    padding: 20px 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Carousel navigation arrows */
+.arrow {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    font-size: 0.9rem;
-    padding: 5px 10px;
-    border-radius: 5px;
-    z-index: 6;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #ff781f;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-*/
 
+.arrow:hover {
+    background-color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .stories h2 {
+        font-size: 2em;
+    }
+
+    .story-carousel-wrapper {
+        padding: 0 20px;
+    }
+
+    .arrow {
+        display: none; /* Hide arrows on smaller screens for touch scrolling */
+    }
+}
+
+@media (max-width: 480px) {
+    .story-box {
+        width: 100%; /* Make cards full-width on very small screens */
+    }
+}
 /* Footer */
 .footer {
     background: #222;
