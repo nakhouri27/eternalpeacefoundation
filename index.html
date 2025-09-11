@@ -1,295 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eternal Peace Foundation</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Peace Foundation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <div class="logo-box">
-          <video class="logo-video" autoplay muted loop playsinline>
-            <source src="images/logo1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-box">
+                        <img src="images/logo2.png" alt="Eternal Peace Foundation Logo" class="logo-img">
+                    </div>
+                    <span class="logo-text">ETERNAL PEACE FOUNDATION</span>
+                </a>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="maintenance.html" target="_blank">Donate</a></li>
+                <li><a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?edit_requested=true" target="_blank">Volunteer</a></li>
+                <li><a href="#contact-us">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="banner-slider">
+            <img src="images/401.png" alt="Children being fed during Pitru Paksha event.">
+            <img src="images/500.png" alt="Helping hand for the needy.">
+            <img src="images/500.png" alt="Helping hand for the needy.">
         </div>
-        <span class="logo-text">ETERNAL PEACE FOUNDATION</span>
-      </div>
+    </section>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Programs</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">Volunteer</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger">☰</div>
-    </nav>
-  </header>
+    
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>We can't help everyone but everyone can help someone</h1>
-      <p>We provide food, education, healthcare, and seasonal support to communities in need. Together, we can create eternal peace.</p>
-      <div class="btn-group">
-        <a href="#" class="btn primary">Donate Now</a>
-        <a href="https://docs.google.com/forms/d/e/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?usp=sf_link" target="_blank" class="btn secondary">Join as Volunteer</a>
-      </div>
-    </div>
-
-    <!-- Slider -->
-    <div class="hero-slider-wrapper">
-      <div class="hero-slider">
-        <div class="slides">
-          <div class="slide active"><img src="images/portrait4.jpg" alt="Helping children"></div>
-          <div class="slide"><img src="images/landscape1.jpg" alt="Food distribution"></div>
-          <div class="slide"><img src="images/portrait2.jpg" alt="Education program"></div>
+    <section id="programs" class="info-cards-section">
+        <h2 class="programs-header">Our Mission & Programs</h2>
+        <div class="programs-text-container">
+            <p>Eternal Peace Foundation a not-for-profit organization founded in June 2021 under Section 8 of the Companies Act, is dedicated to serving vulnerable communities with compassion, dignity, and sustainable impact.</p>  
+            <p>Operating in Ranchi, Ahmedabad, Bangalore, and Pune, we focus on initiatives that address basic needs, healthcare, education, and social welfare. From providing nutritious meals and essential supplies to children and families, to supporting hospitals, promoting education, and organizing health camps, every project is designed to uplift lives and strengthen communities.</p>
+            <h2 class="programs-quote">“We can’t help everyone but everyone can help someone."</h2>
         </div>
-        <div class="dots" id="dots"></div>
-      </div>
-    </div>
-  </section>
+        <div class="info-cards">
+            <div class="card">
+                <img src="images/c1.png" alt="Project Bread Icon" class="card-icon">
+                <h3>PROJECT BREAD</h3>
+                <p>We provide essential groceries and meals to families struggling with hunger, ensuring no one goes to bed hungry.</p>
+                <p><span class="counter" data-target="10000">0</span>+ meals distributed.</p>
+                <a href="events.html#project-bread" class="card-button">Learn More</a>
+            </div>
 
-  <!-- Info Cards -->
-  <section class="info-cards">
-    <div class="card">
-      <img src="images/ration.jpg" alt="Project Bread Icon" class="card-icon">
-      <h3>🍲 PROJECT BREAD</h3>
-      <p><span class="counter" data-target="10000">0</span>+ meals distributed monthly.</p>
-    </div>
-    <div class="card">
-      <img src="images/education1.jpg" alt="Education Icon" class="card-icon">
-      <h3>📚 CHILD DEVELOPMENT</h3>
-      <p><span class="counter" data-target="100">0</span>+ children supported with free education & supplies.</p>
-    </div>
-    <div class="card">
-      <img src="images/portrait3.jpg" alt="Community Icon" class="card-icon">
-      <h3>🧡 PROJECT LIFELINE</h3>
-      <p>Bringing care through blood drives, health check-ups, and equipment donations.</p>
-    </div>
-    <div class="card">
-      <img src="images/community.jpg" alt="Community Icon" class="card-icon">
-      <h3>🧡 Community</h3>
-      <p>Seasonal drives for blankets, umbrellas & medical aid.</p>
-    </div>
-  </section>
+            <div class="card">
+                <img src="images/n1.png" alt="Education Icon" class="card-icon">
+                <h3>PROJECT GROWTH</h3>
+                <p>Empowering children with education, nutrition, and opportunities to grow into confident, healthy adults.</p>
+                <p><span class="counter" data-target="100">0</span>+ children supported.</p>
+                <a href="events.html#project-growth" class="card-button">Learn More</a>
+            </div>
 
-  <!-- Wave Divider -->
-  <div class="wave">
-    <svg viewBox="0 0 1440 320"><path fill="#fff" d="M0,96L60,122.7C120,149,240,203,360,224C480,245,600,235,720,229.3C840,224,960,224,1080,224C1200,224,1320,245,1380,256L1440,267L1440,0L0,0Z"></path></svg>
-  </div>
+            <div class="card">
+                <img src="images/u11.png" alt="Community Icon" class="card-icon">
+                <h3>PROJECT WARMTH</h3>
+                <p>Distributing blankets, umbrellas, and clothing to help communities face extreme weather conditions with dignity.</p>
+                <p><span class="counter" data-target="1000">0</span>+ items distributed.</p>
+                <a href="events.html#project-warmth" class="card-button">Learn More</a>
+            </div>
 
-  <!-- Stories Section -->
-  <section class="stories">
-    <h2>OUR IMPACTS</h2>
-    <div class="story-carousel-wrapper">
-      <button class="arrow left-arrow">&#10094;</button>
-      <div class="story-carousel">
-        <!-- Story Boxes -->
-        <div class="story-box">
-          <div class="story-media">
-            <img src="images/story1.jpg" alt="Story 1" class="story-thumb">
-            <video class="story-video" loop muted>
-              <source src="images/story1.mp4" type="video/mp4">
-            </video>
-            <div class="unmute-overlay">Click to Unmute</div>
-          </div>
-          <p class="story-caption">Wellness Aid</p>
+            <div class="card">
+                <img src="images/1n.png" alt="Community Icon" class="card-icon">
+                <h3>PROJECT LIFELINE</h3>
+                <p>Promoting health and care by conducting blood drives,camps and providing hospitals beds and wheelchairs.</p>
+                <p><span class="counter" data-target="25">0</span>+ drives organized.</p>
+                <a href="events.html#project-lifeline" class="card-button">Learn More</a>
+            </div>
         </div>
+    </section>
 
-        <div class="story-box">
-          <div class="story-media">
-            <img src="images/story2.jpg" alt="Story 2" class="story-thumb">
-            <video class="story-video" loop muted>
-              <source src="images/story2.mp4" type="video/mp4">
-            </video>
-            <div class="unmute-overlay">Click to Unmute</div>
-          </div>
-          <p class="story-caption">Wheel Chair Donation</p>
+    <section class="success-stories">
+        <div class="success-box">
+            <div class="success-container">
+                <div class="success-text">
+                    <h2>STORIES OF HOPE</h2>
+                    <h3>Project Lifeline: Freedom on Wheels</h3>
+                    <p>
+                        We received a heartfelt request from a woman who had been struggling with immobility for a long time. 
+                        She was unable to walk or move around on her own, and even the smallest of daily tasks had become a challenge. 
+                        Her words were filled with pain but also with hope, as she reached out for help.
+                    </p>
+                    <p>
+                        At Eternal Peace Foundation, we believe no one should feel helpless or alone in their time of need. 
+                        Without a second thought, our team came together, arranged for a wheelchair, and personally visited her home to deliver it. 
+                        That simple act didn’t just give her a means to move, it gave her back her dignity, her independence, and her hope.
+                    </p>
+                    <p>
+                        This is why we do what we do. Every life we touch reminds us that even a small gesture of kindness 
+                        can create a world of difference.
+                    </p>
+                    <p>"We can't help everyone but everyone can help someone."</p>
+                    
+                    <a href="stories.html" class="btn-more">Read More Stories </a>
+                </div>
+                <div class="success-video">
+                    <video controls playsinline>
+                        <source src="images/story2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="story-box">
-          <div class="story-media">
-            <img src="images/bed.jpg" alt="Story 3" class="story-thumb">
-            <video class="story-video" loop muted>
-              <source src="images/story3.mp4" type="video/mp4">
-            </video>
-            <div class="unmute-overlay">Click to Unmute</div>
-          </div>
-          <p class="story-caption">Hospital Bed Donation</p>
-        </div>
+    <section class="stories">
+        <h2>OUR IMPACTS</h2>
+        <div class="story-carousel-wrapper">
+            <button class="arrow left-arrow">&#10094;</button>
+            <div class="story-carousel">
+                <div class="story-box">
+                    <div class="story-media">
+                        <img src="images/ev2.jpg" alt="Story 1" class="story-thumb">
+                    </div>
+                    <p class="story-caption">Wellness Aid</p>
+                </div>
 
-        <div class="story-box">
-          <div class="story-media">
-            <img src="images/story5-thumb.jpg" alt="Story 5" class="story-thumb">
-            <video class="story-video" loop muted>
-              <source src="images/story5.mp4" type="video/mp4">
-            </video>
-            <div class="unmute-overlay">Click to Unmute</div>
-          </div>
-          <p class="story-caption">Meal Support</p>
-        </div>
+                <div class="story-box">
+                    <div class="story-media">
+                        <img src="images/evpl1.jpg" alt="Story 2" class="story-thumb">
+                    </div>
+                    <p class="story-caption">Wheel Chair Donation</p>
+                </div>
 
-        <div class="story-box">
-          <div class="story-media">
-            <img src="images/story5.jpg" alt="Story 5" class="story-thumb">
-            <video class="story-video" loop muted>
-              <source src="images/story7.mp4" type="video/mp4">
-            </video>
-            <div class="unmute-overlay">Click to Unmute</div>
-          </div>
-          <p class="story-caption">Winter Relief</p>
+                <div class="story-box">
+                    <div class="story-media">
+                        <img src="images/education.jpg" alt="Story 3" class="story-thumb">
+                    </div>
+                    <p class="story-caption">Hospital Bed Donation</p>
+                </div>
+
+                <div class="story-box">
+                    <div class="story-media">
+                        <img src="images/pb4.jpg" alt="Story 5" class="story-thumb">
+                    </div>
+                    <p class="story-caption">Meal Support</p>
+                </div>
+
+                <div class="story-box">
+                    <div class="story-media">
+                        <img src="images/portrait2.jpg" alt="Story 5" class="story-thumb">
+                    </div>
+                    <p class="story-caption">Winter Relief</p>
+                </div>
+            </div>
+            <button class="arrow right-arrow">&#10095;</button>
         </div>
-      <button class="arrow right-arrow">&#10095;</button>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Eternal Peace Foundation</h3>
+                <p>We can't help everyone but everyone can help someone.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="maintenance.html" target="_blank">Donate</a></li>
+                    <li><a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?edit_requested=true" target="_blank">Volunteer</a></li>
+                    <li><a href="#contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact" id="contact-us">
+                <h4>Contact Us</h4>
+                <p>Email: teameternalpeace@gmail.com</p>
+                <p>Phone: </p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/eternalpeacefoundation/" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/eternalpeacefoundation/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Eternal Peace Foundation. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="sticky-mobile-cta">
+        <a href="maintenance.html" target="_blank" class="btn primary">Donate Now</a>
+        <a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?edit_requested=true" target="_blank" class="btn secondary">Join as Volunteer</a>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-about">
-        <h3>Eternal Peace Foundation</h3>
-        <p>Providing food, education, healthcare, and seasonal support to communities in need.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Programs</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Donate</a></li>
-          <li><a href="#">Volunteer</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact Us</h4>
-        <p>Email: info@eternalpeace.org</p>
-        <p>Phone: +91-1234567890</p>
-        <div class="social-icons">
-          <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
-          <a href="#"><img src="images/twitter.svg" alt="Twitter"></a>
-          <a href="https://www.instagram.com/eternalpeacefoundation/" target="_blank"><img src="images/instagram.svg" alt="Instagram"></a>
+    <div id="event-popup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <div class="popup-message">
+                <h2>Upcoming Event</h2>
+                <p>Upcoming event is on <span id="event-date">**Date**</span> at <span id="event-venue">**Venue**</span>.</p>
+                <p>Join us!</p>
+                <a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?edit_requested=true" target="_blank" class="btn primary volunteer-link">Volunteer Link</a>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 Eternal Peace Foundation. All rights reserved.
-    </div>
-  </footer>
 
-  <!-- JS -->
-  <script>
-    // Navbar scroll effect
-    window.addEventListener("scroll", () => {
-      document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
-    });
+    <script>
+        // Navbar scroll effect
+        window.addEventListener("scroll", () => {
+            document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+        });
 
-    // Mobile hamburger
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("navLinks");
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
+        // Mobile hamburger
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
 
-    // Slider
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
-    const dotsContainer = document.getElementById("dots");
+        // Smooth scroll for Programs link
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+                navLinks.classList.remove("active");
+            });
+        });
 
-    slides.forEach((_, i) => {
-      const dot = document.createElement("span");
-      dot.classList.add("dot");
-      if (i === 0) dot.classList.add("active");
-      dot.addEventListener("click", () => showSlide(i));
-      dotsContainer.appendChild(dot);
-    });
-    const dots = document.querySelectorAll(".dot");
+        // Slider
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const dotsContainer = document.getElementById("dots");
 
-    function showSlide(n) {
-      slides.forEach((s, i) => {
-        s.classList.remove("active");
-        dots[i].classList.remove("active");
-      });
-      slides[n].classList.add("active");
-      dots[n].classList.add("active");
-      slideIndex = n;
-    }
-    function autoSlide() {
-      slideIndex = (slideIndex + 1) % slides.length;
-      showSlide(slideIndex);
-    }
-    setInterval(autoSlide, 3000);
+        slides.forEach((_, i) => {
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            if (i === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => showSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+        const dots = document.querySelectorAll(".dot");
 
-    // Counter animation
-    const counters = document.querySelectorAll(".counter");
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute("data-target");
-        const count = +counter.innerText;
-        const inc = target / 100;
-        if (count < target) {
-          counter.innerText = Math.ceil(count + inc);
-          setTimeout(updateCount, 40);
-        } else {
-          counter.innerText = target;
+        function showSlide(n) {
+            slides.forEach((s, i) => {
+                s.classList.remove("active");
+                dots[i].classList.remove("active");
+            });
+            slides[n].classList.add("active");
+            dots[n].classList.add("active");
+            slideIndex = n;
         }
-      };
-      updateCount();
-    });
+        function autoSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+        setInterval(autoSlide, 3000);
 
-    // Stories carousel arrows + video hover
-    const storyCarousel = document.querySelector('.story-carousel');
-    const leftArrow = document.querySelector('.left-arrow');
-    const rightArrow = document.querySelector('.right-arrow');
-    const storyBoxes = storyCarousel.querySelectorAll('.story-box');
+        // Counter animation
+        const counters = document.querySelectorAll(".counter");
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute("data-target");
+                const count = +counter.innerText;
+                const inc = target / 100;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 40);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
 
-    // Get box width dynamically
-    function getStoryBoxWidth() {
-      const box = storyBoxes[0];
-      const style = window.getComputedStyle(box);
-      const margin = parseInt(style.marginRight) || 15;
-      return box.offsetWidth + margin;
-    }
+        // Stories carousel arrows + video hover
+        const storyCarousel = document.querySelector('.story-carousel');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+        const storyBoxes = storyCarousel.querySelectorAll('.story-box');
 
-    leftArrow.addEventListener('click', () => {
-      storyCarousel.scrollBy({ left: -getStoryBoxWidth(), behavior: 'smooth' });
-    });
+        function getStoryBoxWidth() {
+            const box = storyBoxes[0];
+            const style = window.getComputedStyle(box);
+            const margin = parseInt(style.marginRight) || 15;
+            return box.offsetWidth + margin;
+        }
 
-    rightArrow.addEventListener('click', () => {
-      storyCarousel.scrollBy({ left: getStoryBoxWidth(), behavior: 'smooth' });
-    });
+        leftArrow.addEventListener('click', () => {
+            storyCarousel.scrollBy({ left: -getStoryBoxWidth(), behavior: 'smooth' });
+        });
 
-    storyBoxes.forEach(box => {
-      const video = box.querySelector('video');
-      const overlay = box.querySelector('.unmute-overlay');
+        rightArrow.addEventListener('click', () => {
+            storyCarousel.scrollBy({ left: getStoryBoxWidth(), behavior: 'smooth' });
+        });
 
-      if (video.muted) overlay.style.display = 'block';
+        storyBoxes.forEach(box => {
+            const video = box.querySelector('video');
+            const overlay = box.querySelector('.unmute-overlay');
 
-      box.addEventListener('mouseenter', () => {
-        video.play().catch(err => console.log(err));
-        video.style.transform = 'scale(1.05)';
-      });
+            if (video.muted) overlay.style.display = 'block';
 
-      box.addEventListener('mouseleave', () => {
-        video.pause();
-        video.currentTime = 0;
-        video.style.transform = 'scale(1)';
-      });
+            box.addEventListener('mouseenter', () => {
+                video.play().catch(err => console.log(err));
+                video.style.transform = 'scale(1.05)';
+            });
 
-      overlay.addEventListener('click', () => {
-        video.muted = false;
-        overlay.style.display = 'none';
-        video.play();
-      });
-    });
-  </script>
+            box.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+                video.style.transform = 'scale(1)';
+            });
+
+            overlay.addEventListener('click', () => {
+                video.muted = false;
+                overlay.style.display = 'none';
+                video.play();
+            });
+        });
+
+        // Sticky CTA (mobile)
+        const stickyCta = document.getElementById('sticky-mobile-cta');
+        const heroSection = document.querySelector('.hero');
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+        window.addEventListener('scroll', () => {
+            if (!isMobile) return;
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            if (heroBottom <= 0) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        });
+
+        // Pop-up
+        function showPopup() {
+            const popup = document.getElementById("event-popup");
+            popup.style.display = "flex";
+            setTimeout(() => popup.classList.add('active'), 10);
+        }
+        function hidePopup() {
+            const popup = document.getElementById("event-popup");
+            popup.classList.remove('active');
+            setTimeout(() => popup.style.display = "none", 300);
+        }
+        const eventsLinks = document.querySelectorAll('a[href="#"]');
+        eventsLinks.forEach(link => {
+            if (link.textContent.trim() === 'Events') {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    showPopup();
+                });
+            }
+        });
+        const closeBtn = document.querySelector('.close-btn');
+        if (closeBtn) closeBtn.addEventListener("click", hidePopup);
+        const popupOverlay = document.getElementById("event-popup");
+        popupOverlay.addEventListener("click", function(e) {
+            if (e.target === popupOverlay) hidePopup();
+        });
+    </script>
 </body>
 </html>
