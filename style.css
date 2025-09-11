@@ -558,6 +558,55 @@ body {
     margin: 0;
 }
 
+/* Add a new style for the .btn-more button to center it */
+.btn-more {
+    display: inline-block;
+    margin-top: 40px; /* Add space between the video and the button */
+    padding: 15px 40px;
+    background-color: #ff781f; /* A strong orange for the button */
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-more:hover {
+    background-color: #e56b1a; /* Darker orange on hover */
+    transform: translateY(-2px);
+}
+
+/* Adjust the success container for mobile view */
+@media (max-width: 768px) {
+    .success-box {
+        padding: 20px;
+    }
+
+    .success-container {
+        flex-direction: column; /* Stacks text and video vertically on mobile */
+    }
+
+    .success-text {
+        margin-bottom: 20px; /* Adds space below the text */
+    }
+    
+    .success-video {
+        width: 100%; /* Makes the video container full width on mobile */
+        max-width: 100%;
+    }
+
+    .success-video video {
+        width: 100%; /* Makes the video itself full width */
+        max-width: 320px; /* Maintains a max-width for better display */
+    }
+    
+    .btn-more {
+        margin-top: 30px; /* Adjust spacing for mobile */
+    }
+}
+
 /* "OUR IMPACTS" Section */
 .stories {
     background-color: #ff781f; /* A vibrant orange background to match the image */
