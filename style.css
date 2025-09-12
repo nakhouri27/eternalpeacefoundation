@@ -690,6 +690,7 @@ body {
     align-items: center;
     max-width: 320px;
     margin: auto;
+    
 }
 
 .success-video video {
@@ -1445,4 +1446,74 @@ body {
 }
 
 
+/* Sticky CTA Section for Mobile */
+/* --- START OF CORRECTED STICKY CTA FOR MOBILE --- */
+#sticky-mobile-cta {
+    /* This will be hidden by default on all screen sizes */
+    display: none; 
+}
 
+/* This rule will only be applied on screens below 768px */
+@media (max-width: 768px) {
+    #sticky-mobile-cta {
+        display: flex;
+        /* ... other styles ... */
+    }
+}
+/* --- END OF CORRECTED STICKY CTA FOR MOBILE --- */
+
+
+.sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 4%;
+    width: 100%;
+    /* ... other styles ... */
+    display: none; /* Make sure this is present */
+}
+
+@media (max-width: 768px) {
+    .sticky-cta {
+        display: flex; /* Make sure this is present */
+    }
+}
+
+.sticky-cta .cta-button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.sticky-cta .donate-btn {
+    background-color: #ff6600; /* Orange color */
+    color: #fff;
+    border: 2px solid #ff6600;
+}
+
+.sticky-cta .donate-btn:hover {
+    background-color: #e55c00;
+}
+
+.sticky-cta .volunteer-btn {
+    background-color: #fff;
+    color: #ff6600;
+    border: 2px solid #ff6600;
+}
+
+.sticky-cta .volunteer-btn:hover {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+    .sticky-cta {
+        display: flex; /* This makes the sticky bar visible only on screens 768px or smaller. */
+    }
+}
