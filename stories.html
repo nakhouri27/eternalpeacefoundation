@@ -1,60 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Maintenance</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            padding: 40px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #d9534f;
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-        .contact-info {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Success Stories</title>
+<style>
+/* ================= Success Stories ================= */
+body { 
+    margin:0; 
+    font-family:Arial, sans-serif; 
+    background:#fff7f0; 
+}
+
+/* Page title above box */
+.page-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #ff6600;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.page-title::after {
+    content:"";
+    display:block;
+    width:60px;
+    height:4px;
+    background:#000;
+    margin:10px auto 0;
+    border-radius:2px;
+}
+
+/* Box containing the story */
+.success-stories { 
+    padding:40px 20px; 
+    display:flex; 
+    justify-content:center; 
+    flex-direction:column; 
+    gap:50px; 
+}
+
+.success-box { 
+    background:#fff; 
+    border-radius:20px; 
+    padding:40px; 
+    max-width:1200px; 
+    width:100%; 
+    box-shadow:0 6px 20px rgba(0,0,0,0.1); 
+}
+
+.success-container { 
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between; 
+    gap:40px; 
+    flex-wrap:wrap; 
+}
+
+.success-text { 
+    flex:1 1 500px; 
+}
+
+.success-text h3 { 
+    font-size:1.8rem; 
+    margin-bottom:15px; 
+    color:#333; 
+    font-weight:600; 
+    line-height:1.3; 
+}
+
+.success-text p { 
+    font-size:1.1rem; 
+    color:#555; 
+    line-height:1.7; 
+}
+
+/* Video container styling */
+.success-video { 
+    flex:0 0 200px; 
+    position:relative; 
+    overflow:hidden; 
+    border-radius:20px; 
+    background:#000; 
+    cursor:pointer; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #ff6600; /* border outside video box */
+}
+
+.success-video:hover {
+    transform: translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.2);
+}
+
+.success-video video { 
+    width:100%; 
+    height:auto; 
+    border-radius:17px; 
+    display:block; 
+}
+
+.poster-overlay { 
+    position:absolute; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    z-index:2; 
+}
+
+.poster-overlay img { 
+    width:100%; 
+    height:100%; 
+    object-fit:cover; 
+    border-radius:17px; 
+}
+
+.play-overlay { 
+    position:absolute; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    background:rgba(0,0,0,0.4); 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    z-index:3; 
+    transition:opacity 0.3s ease; 
+}
+
+.play-overlay .play-icon { 
+    font-size:4rem; 
+    color:#fff; 
+    transition:transform 0.3s ease; 
+}
+
+.play-overlay:hover .play-icon { 
+    transform:scale(1.1); 
+}
+
+/* Mobile styles */
+@media(max-width:768px){
+    .success-container { 
+        flex-direction:column; 
+        align-items:center; 
+        gap:20px; 
+    }
+
+    .success-text { 
+        text-align:center; 
+    }
+
+    .page-title {
+        font-size:2rem;
+        margin-bottom:30px;
+    }
+
+    .success-text h3 { 
+        font-size:1.4rem; 
+    }
+
+    .success-text p { 
+        font-size:1rem; 
+    }
+
+    .success-video { 
+        width:100%; 
+        max-width:150px; 
+        flex:1 1 100%; 
+    }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Page Under Maintenance</h1>
-        <p>This page is currently undergoing maintenance. We apologize for the inconvenience and appreciate your patience.</p>
-        <p>Please try again after some time.</p>
-        <div class="contact-info">
-            <p>If you have any urgent queries, please contact us at:</p>
-            <p><a href="mailto:teameternalpeace@gmail.com">teameternalpeace@gmail.com</a></p>
+
+<section class="success-stories">
+
+    <!-- Page title outside the box -->
+    <h2 class="page-title">STORIES OF HOPE</h2>
+
+    <div class="success-box">
+        <div class="success-container">
+            <div class="success-text">
+                <h3>Project Bread: Reaching Hearts, Wherever They Are</h3>
+                <p>A middle-aged man from Vishakhapatnam reached out to us for help with groceries. Even though Eternal Peace Foundation is not in his city, we could not ignore his need. Using our trusted contacts, we were able to provide him with the ration and essentials he needed.</p>
+                <p>This shows that kindness has no boundaries. Even far away, we can make a difference in someone’s life and bring hope when it is needed the most. Every small act of care can lighten someone’s burden and remind them that they are not alone. Stories like these inspire us to continue reaching out and helping wherever we can.</p>
+            </div>
+            <div class="success-video">
+                <div class="poster-overlay">
+                    <img src="images/poster.jpg" alt="">
+                </div>
+                <video id="video1" muted playsinline>
+                    <source src="images/vsp.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="play-overlay">
+                    <span class="play-icon">▶</span>
+                </div>
+            </div>
         </div>
     </div>
+</section>
+
+<script>
+const videoContainer = document.querySelector('.success-video');
+const video = videoContainer.querySelector('video');
+const playOverlay = videoContainer.querySelector('.play-overlay');
+const posterOverlay = videoContainer.querySelector('.poster-overlay');
+
+playOverlay.addEventListener('click', () => {
+    if(video.paused){
+        video.play();
+        playOverlay.style.display = 'none';
+        posterOverlay.style.display = 'none';
+    } else {
+        video.pause();
+        playOverlay.style.display = 'flex';
+        posterOverlay.style.display = 'block';
+    }
+});
+
+video.addEventListener('ended', () => {
+    playOverlay.style.display = 'flex';
+    posterOverlay.style.display = 'block';
+});
+</script>
+
 </body>
 </html>
