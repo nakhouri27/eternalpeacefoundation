@@ -392,5 +392,36 @@
     <a href="maintenance.html" target="_blank" class="cta-button donate-btn">Donate Now</a>
     <a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?fbclid=PAZXh0bgNhZW0CMTEAAac6UifcePBvD3MSPhCnPdgxIa8WhVpzW9lL8yfyaOSXHSESJmH7k44xcTSQ-g_aem_Z7giIB02QEuF96WkFkfzjA&edit_requested=true" target="_blank" class="cta-button volunteer-btn">Volunteer</a>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".story-carousel");
+    const scrollAmount = 300; // how much it moves each time
+    const intervalTime = 3000; // time in ms (3 seconds)
+
+    let autoScroll = setInterval(() => {
+        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+            // If at end, go back to start
+            carousel.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+            // Otherwise, scroll right
+            carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+    }, intervalTime);
+
+    // Optional: Pause on hover
+    carousel.addEventListener("mouseover", () => clearInterval(autoScroll));
+    carousel.addEventListener("mouseout", () => {
+        autoScroll = setInterval(() => {
+            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+                carousel.scrollTo({ left: 0, behavior: "smooth" });
+            } else {
+                carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            }
+        }, intervalTime);
+    });
+});
+</script>
+
 </body>
 </html>
