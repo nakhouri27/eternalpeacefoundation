@@ -1,232 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Success Stories</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Success Stories — Eternal Peace Foundation</title>
 <style>
-/* ================= Success Stories ================= */
-body { 
-    margin:0; 
-    font-family:Arial, sans-serif; 
-    background:#fff7f0; 
+/* ================= Base ================= */
+:root{
+  --accent:#ff6600;
+  --bg:#fff7f0;
+  --card:#fff;
+  --text:#333;
+  --muted:#555;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  padding-top:68px; /* space for fixed top nav */
 }
 
-/* Page title above box */
-.page-title {
+/* ================= Top nav ================= */
+.top-nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 22px;
+  background:var(--bg);
+  z-index:1100;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+}
+.top-nav .nav-links{display:flex;gap:18px;align-items:center}
+.top-nav a{color:var(--text);text-decoration:none;font-weight:600}
+.top-nav a:hover{color:var(--accent)}
+.nav-button{
+  background:var(--accent);
+  color:#fff;
+  padding:8px 14px;
+  border-radius:6px;
+  text-transform:uppercase;
+  font-size:.85rem;
+  display:inline-block;
+}
+
+/* ================= Section wrapper & title ================= */
+.success-section{
+  padding:28px 18px 80px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:28px;
+  max-width:1300px;
+  margin:0 auto;
+}
+
+.page-title{
+  text-align:center;
+  font-size:2.6rem;
+  color:var(--accent);
+  font-weight:800;
+  text-transform:uppercase;
+  margin:6px 0 6px;
+  letter-spacing:.6px;
+}
+.page-title::after{
+  content:"";
+  display:block;
+  width:84px;
+  height:6px;
+  background:var(--accent);
+  margin:12px auto 0;
+  border-radius:3px;
+}
+
+/* ================= Story card ================= */
+.success-box{
+  width:100%;
+  background:var(--card);
+  border-radius:18px;
+  padding:26px;
+  box-shadow:0 14px 40px rgba(11,15,20,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* layout inside each box */
+.story-container{
+  display:flex;
+  gap:28px;
+  flex-direction:column;
+}
+
+/* text block */
+.story-text {
+  text-align:center;
+}
+.story-text h3{
+  font-size:1.4rem;
+  margin:0 0 10px;
+  color:var(--text);
+  font-weight:700;
+  text-decoration: underline; /* added for underline */
+  text-decoration-color: var(--accent); /* orange underline */
+  text-underline-offset: 4px; /* optional: adds space between text and underline */
+}
+.story-text p{
+  margin:0 0 12px;
+  color:var(--muted);
+  font-size:1rem;
+  line-height:1.7;
+  font-style: italic; /* added for italics */
+
+}
+
+
+/* ================= Video block ================= */
+.story-video {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  border: 3px solid var(--accent);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  cursor: pointer;
+  aspect-ratio: 9 / 16;  /* portrait */
+}
+
+/* hide video until play */
+.story-video video {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  z-index: 1;
+  opacity: 0;                /* hidden by default */
+  transition: opacity .3s ease;
+}
+.story-video video.show { opacity: 1; } /* show when playing */
+
+/* overlay thumbnail image */
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  z-index: 2;
+}
+.video-overlay.hidden { display: none; }
+
+/* play button centered */
+.play-button {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  color: #fff;
+  z-index: 3;
+  pointer-events: none;
+}
+.play-button.hidden { display: none; }
+
+/* Desktop adjustments */
+@media(min-width:800px){
+  .story-video { max-width: 280px; aspect-ratio: 3/4; max-height: 420px; }
+}
+@media(min-width: 800px){
+  .story-container {
+    flex-direction: row;
+    align-items: flex-start; /* optional: align top */
+    justify-content: space-between;
+  }
+
+  .story-text {
+    flex: 1; /* take available width */
+    text-align: left; /* optional */
+  }
+
+  .story-video {
+    flex-shrink: 0; /* video keeps its size */
+  }
+}
+
+
+
+/* Mobile adjustments */
+@media(max-width:520px){
+  .story-video { max-width: 260px; }
+}
+/* Footer */
+.footer {
+    background: #222;
+    color: #ccc;
+    padding: 50px 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-about h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.footer-bottom {
     text-align: center;
-    font-size: 2.8rem;
-    color: #ff6600;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    position: relative;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #888;
 }
 
-.page-title::after {
-    content:"";
-    display:block;
-    width:60px;
-    height:4px;
-    background:#000;
-    margin:10px auto 0;
-    border-radius:2px;
+/* Adds margin to the social icons in the footer */
+.footer-contact .social-icons {
+    margin-top: 15px;
 }
 
-/* Box containing the story */
-.success-stories { 
-    padding:40px 20px; 
-    display:flex; 
-    justify-content:center; 
-    flex-direction:column; 
-    gap:50px; 
-}
 
-.success-box { 
-    background:#fff; 
-    border-radius:20px; 
-    padding:40px; 
-    max-width:1200px; 
-    width:100%; 
-    box-shadow:0 6px 20px rgba(0,0,0,0.1); 
-}
-
-.success-container { 
-    display:flex; 
-    align-items:center; 
-    justify-content:space-between; 
-    gap:40px; 
-    flex-wrap:wrap; 
-}
-
-.success-text { 
-    flex:1 1 500px; 
-}
-
-.success-text h3 { 
-    font-size:1.8rem; 
-    margin-bottom:15px; 
-    color:#333; 
-    font-weight:600; 
-    line-height:1.3; 
-}
-
-.success-text p { 
-    font-size:1.1rem; 
-    color:#555; 
-    line-height:1.7; 
-}
-
-/* Video container styling */
-.success-video { 
-    flex:0 0 200px; 
-    position:relative; 
-    overflow:hidden; 
-    border-radius:20px; 
-    background:#000; 
-    cursor:pointer; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 3px solid #ff6600; /* border outside video box */
-}
-
-.success-video:hover {
-    transform: translateY(-5px);
-    box-shadow:0 12px 25px rgba(0,0,0,0.2);
-}
-
-.success-video video { 
-    width:100%; 
-    height:auto; 
-    border-radius:17px; 
-    display:block; 
-}
-
-.poster-overlay { 
-    position:absolute; 
-    top:0; 
-    left:0; 
-    width:100%; 
-    height:100%; 
-    z-index:2; 
-}
-
-.poster-overlay img { 
-    width:100%; 
-    height:100%; 
-    object-fit:cover; 
-    border-radius:17px; 
-}
-
-.play-overlay { 
-    position:absolute; 
-    top:0; 
-    left:0; 
-    width:100%; 
-    height:100%; 
-    background:rgba(0,0,0,0.4); 
-    display:flex; 
-    justify-content:center; 
-    align-items:center; 
-    z-index:3; 
-    transition:opacity 0.3s ease; 
-}
-
-.play-overlay .play-icon { 
-    font-size:4rem; 
-    color:#fff; 
-    transition:transform 0.3s ease; 
-}
-
-.play-overlay:hover .play-icon { 
-    transform:scale(1.1); 
-}
-
-/* Mobile styles */
-@media(max-width:768px){
-    .success-container { 
-        flex-direction:column; 
-        align-items:center; 
-        gap:20px; 
-    }
-
-    .success-text { 
-        text-align:center; 
-    }
-
-    .page-title {
-        font-size:2rem;
-        margin-bottom:30px;
-    }
-
-    .success-text h3 { 
-        font-size:1.4rem; 
-    }
-
-    .success-text p { 
-        font-size:1rem; 
-    }
-
-    .success-video { 
-        width:100%; 
-        max-width:150px; 
-        flex:1 1 100%; 
-    }
-}
 </style>
 </head>
 <body>
 
-<section class="success-stories">
+<!-- top nav -->
+<nav class="top-nav" aria-label="Primary">
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#programs">Programs</a>
+    <a href="#contact-us">Contact</a>
+  </div>
+  <div class="nav-links">
+    <a class="nav-button" href="maintenance.html" target="_blank">Donate</a>
+  </div>
+</nav>
 
-    <!-- Page title outside the box -->
-    <h2 class="page-title">STORIES OF HOPE</h2>
+<!-- success stories -->
+<section class="success-section" aria-labelledby="stories-heading">
+  <h1 id="stories-heading" class="page-title">Stories of Hope</h1>
 
-    <div class="success-box">
-        <div class="success-container">
-            <div class="success-text">
-                <h3>Project Bread: Reaching Hearts, Wherever They Are</h3>
-                <p>A middle-aged man from Vishakhapatnam reached out to us for help with groceries. Even though Eternal Peace Foundation is not in his city, we could not ignore his need. Using our trusted contacts, we were able to provide him with the ration and essentials he needed.</p>
-                <p>This shows that kindness has no boundaries. Even far away, we can make a difference in someone’s life and bring hope when it is needed the most. Every small act of care can lighten someone’s burden and remind them that they are not alone. Stories like these inspire us to continue reaching out and helping wherever we can.</p>
-            </div>
-            <div class="success-video">
-                <div class="poster-overlay">
-                    <img src="images/poster.jpg" alt="">
-                </div>
-                <video id="video1" muted playsinline>
-                    <source src="images/vsp.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="play-overlay">
-                    <span class="play-icon">▶</span>
-                </div>
-            </div>
-        </div>
+  <!-- Story 1 -->
+  <article class="success-box" aria-labelledby="s1-title">
+    <div class="story-container">
+      <div class="story-text">
+        <h3 id="s1-title">Project Bread: Reaching Hearts, Wherever They Are</h3>
+        <p>A middle-aged man from Vishakhapatnam reached out to us for help with groceries. Even though Eternal Peace Foundation is not in his city, we could not ignore his need. Using our trusted contacts, we were able to provide him with the ration and essentials he needed.</p>
+        <p>This shows that kindness has no boundaries. Even far away, we can make a difference in someone’s life and bring hope when it is needed the most. Every small act of care can lighten someone’s burden and remind them that they are not alone. Stories like these inspire us to continue reaching out and helping wherever we can.</p>
+      </div>
+
+      <div class="story-video" data-video-src="images/vsp.mp4" role="button" aria-label="Play Project Bread video">
+        <!-- thumbnail overlay -->
+        <img class="video-overlay" src="images/poster.jpg" alt="">
+        <!-- hidden video element (will play when clicked) -->
+        <video playsinline preload="metadata">
+          <source src="images/vsp.mp4" type="video/mp4">
+          <!-- fallback -->
+        </video>
+        <div class="play-button" aria-hidden="true">▶</div>
+      </div>
     </div>
+  </article>
+
+  <!-- Story 2 -->
+  <article class="success-box" aria-labelledby="s2-title">
+    <div class="story-container">
+      <div class="story-text">
+        <h3 id="s2-title">Project Lifeline: A Step Towards Hope</h3>
+        <p>A handicapped man with only one leg from Nawada reached out to us for medical treatment. Even though Eternal Peace Foundation is not present in his city, we could not ignore his pain. Through our trusted contacts, we arranged the medicines and treatment he needed.</p>
+        <p>This act was not just about providing medical help — it was about giving him hope, dignity, and the strength to move forward in life. Seeing him overcome his struggles, even in small steps, reminded us that kindness can reach beyond miles. His smile after receiving support filled our hearts, reaffirming that every effort matters, and no distance should ever stop compassion.</p>
+      </div>
+
+      <div class="story-video" data-video-src="images/story1.mp4" role="button" aria-label="Play Project Lifeline video">
+        <img class="video-overlay" src="images/story1.jpg" alt="">
+        <video playsinline preload="metadata">
+          <source src="images/story1.mp4" type="video/mp4">
+        </video>
+        <div class="play-button" aria-hidden="true">▶</div>
+      </div>
+    </div>
+  </article>
+
+
 </section>
 
 <script>
-const videoContainer = document.querySelector('.success-video');
-const video = videoContainer.querySelector('video');
-const playOverlay = videoContainer.querySelector('.play-overlay');
-const posterOverlay = videoContainer.querySelector('.poster-overlay');
+/*
+  Behavior:
+  - Click on the .story-video container => toggle play/pause
+  - Thumbnail overlay (.video-overlay) is shown initially and hidden while playing
+  - Only one video plays at a time (others are paused)
+  - when video ends or is paused via container, overlay & play button re-appear
+*/
+(function(){
+  const boxes = Array.from(document.querySelectorAll('.story-video'));
 
-playOverlay.addEventListener('click', () => {
-    if(video.paused){
-        video.play();
-        playOverlay.style.display = 'none';
-        posterOverlay.style.display = 'none';
-    } else {
-        video.pause();
-        playOverlay.style.display = 'flex';
-        posterOverlay.style.display = 'block';
+  function pauseAllExcept(exceptVideo){
+    boxes.forEach(box=>{
+      const vid = box.querySelector('video');
+      const overlay = box.querySelector('.video-overlay');
+      const btn = box.querySelector('.play-button');
+      if(vid !== exceptVideo){
+        if(!vid.paused){
+          vid.pause();
+        }
+        overlay.classList.remove('hidden');
+        btn.classList.remove('hidden');
+      }
+    });
+  }
+
+  boxes.forEach(box=>{
+    const video = box.querySelector('video');
+    const overlay = box.querySelector('.video-overlay');
+    const btn = box.querySelector('.play-button');
+
+    // Defensive: ensure poster exists; if not, fallback to video.poster attribute
+    if(!overlay.getAttribute('src') && video.getAttribute('poster')){
+      overlay.src = video.getAttribute('poster');
     }
-});
 
-video.addEventListener('ended', () => {
-    playOverlay.style.display = 'flex';
-    posterOverlay.style.display = 'block';
-});
+    // Click toggles playback
+    box.addEventListener('click', (e)=>{
+      // prevent if clicking controls inside video (there aren't native controls)
+      if(video.paused){
+        pauseAllExcept(video);
+        overlay.classList.add('hidden');
+        btn.classList.add('hidden');
+        // attempt to play; user gesture (click) allows audio
+        const p = video.play();
+        if(p && p.catch){
+          p.catch(err=>{
+            // playback failed (rare) — show overlay back
+            console.warn('Playback failed:', err);
+            overlay.classList.remove('hidden');
+            btn.classList.remove('hidden');
+          });
+        }
+      } else {
+        video.pause();
+        overlay.classList.remove('hidden');
+        btn.classList.remove('hidden');
+        // reset to start so poster will be visible on some browsers
+        try{ video.currentTime = 0; }catch(e){}
+      }
+    });
+
+    // When video ends -> show poster and button again
+    video.addEventListener('ended', ()=>{
+      overlay.classList.remove('hidden');
+      btn.classList.remove('hidden');
+      try{ video.currentTime = 0; }catch(e){}
+    });
+
+    // If user uses keyboard focus: support Space key to toggle while focused
+    box.addEventListener('keydown', (ev)=>{
+      if(ev.key === ' ' || ev.key === 'Enter'){
+        ev.preventDefault();
+        box.click();
+      }
+    });
+
+    // Make container focusable for accessibility
+    box.setAttribute('tabindex','0');
+  });
+})();
 </script>
+<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Eternal Peace Foundation</h3>
+                <p>We can't help everyone but everyone can help someone.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="maintenance.html" target="_blank">Donate</a></li>
+                    <li><a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?fbclid=PAZXh0bgNhZW0CMTEAAac6UifcePBvD3MSPhCnPdgxIa8WhVpzW9lL8yfyaOSXHSESJmH7k44xcTSQ-g_aem_Z7giIB02QEuF96WkFkfzjA&edit_requested=true" target="_blank">Volunteer</a></li>
+                    <li><a href="#contact-us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact" id="contact-us">
+                <h4>Contact Us</h4>
+                <p>Email: teameternalpeace@gmail.com</p>
+                <p>Phone: </p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/eternalpeacefoundation/" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/eternalpeacefoundation/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Eternal Peace Foundation. All rights reserved.
+        </div>
+    </footer>
+
 
 </body>
 </html>
