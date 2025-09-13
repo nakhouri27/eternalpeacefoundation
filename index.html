@@ -396,29 +396,28 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.querySelector(".story-carousel");
-    const scrollAmount = 300; // how much it moves each time
-    const intervalTime = 3000; // time in ms (3 seconds)
+    const boxes = document.querySelectorAll(".story-box");
+    const boxWidth = boxes[0].offsetWidth + 20; // card width + gap (20px in your CSS)
+    const intervalTime = 3000; // 3 seconds
 
-    let autoScroll = setInterval(() => {
-        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-            // If at end, go back to start
-            carousel.scrollTo({ left: 0, behavior: "smooth" });
-        } else {
-            // Otherwise, scroll right
-            carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    let currentIndex = 0;
+    let autoScroll = setInterval(moveCarousel, intervalTime);
+
+    function moveCarousel() {
+        currentIndex++;
+        if (currentIndex >= boxes.length) {
+            currentIndex = 0; // reset to start
         }
-    }, intervalTime);
+        carousel.scrollTo({
+            left: currentIndex * boxWidth,
+            behavior: "smooth"
+        });
+    }
 
-    // Optional: Pause on hover
+    // Pause on hover
     carousel.addEventListener("mouseover", () => clearInterval(autoScroll));
     carousel.addEventListener("mouseout", () => {
-        autoScroll = setInterval(() => {
-            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-                carousel.scrollTo({ left: 0, behavior: "smooth" });
-            } else {
-                carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
-            }
-        }, intervalTime);
+        autoScroll = setInterval(moveCarousel, intervalTime);
     });
 });
 </script>

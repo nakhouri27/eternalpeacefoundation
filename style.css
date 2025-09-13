@@ -885,7 +885,7 @@ body {
 
 @media (max-width: 480px) {
     .story-box {
-        width: 100%; /* Make cards full-width on very small screens */
+        width: 100% !important; /* Make cards full-width on very small screens */
     }
 }
 
@@ -1138,7 +1138,7 @@ body {
     }
 
     .story-carousel {
-        gap: 10px;
+        gap: 35px;
         max-width: 100%;
     }
 
