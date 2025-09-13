@@ -346,198 +346,60 @@ body {
 }
 
 
-/* Hero Section */
+/* --- New section styles --- */
+
+/* Add this to your existing CSS for the main content sections */
+
+/* --- Hero Section --- */
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 80px 40px;
-    background-color: #f7f7f7;
-    color: #333;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 40px;
+  background-color: #f7f7f7;
+  color: #333;
+  flex-wrap: wrap; /* Already exists, good! */
 }
 
+/* Add flex-basis to the content and slider wrappers */
 .hero-content {
-    flex: 1;
-    padding-right: 40px;
-    z-index: 2;
+  flex: 1 1 500px; /* New: flex-basis of 500px. It will shrink, grow, but won't wrap until it's smaller than this. */
+  padding-right: 40px;
+  z-index: 2;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero-content h2 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    font-style: italic;
-    margin: 25px 0;
-}
-
-.hero-content p {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    margin-bottom: 25px;
-    color: #555;
-}
-
-.btn-group {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all .3s;
-}
-
-.primary {
-    background: #ff6600;
-    color: #fff;
-}
-
-.primary:hover {
-    background: #ffe0cc;
-    color: #ff6600;
-}
-
-.secondary {
-    border: 2px solid #ff6600;
-    color: #ff6600;
-}
-
-.secondary:hover {
-    background: rgba(255, 102, 0, 0.1);
-}
-
-/* --- START OF NEW HOMEPAGE SLIDER STYLES --- */
-.homepage-slider-container {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.homepage-slider {
-    display: flex;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 1;
-}
-
-.homepage-slide {
-    min-width: 100%;
-    transition: transform 0.5s ease-in-out;
-    flex-shrink: 0;
-}
-
-.homepage-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.homepage-slider-nav {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 2;
-}
-
-.homepage-slider-dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.homepage-slider-dot.active {
-    background-color: #ff6600;
-    transform: scale(1.2);
-}
-/* --- END OF NEW HOMEPAGE SLIDER STYLES --- */
-
-/* Slider */
 .hero-slider-wrapper {
-    flex: 1;
-    max-width: 500px;
-    position: relative;
+  flex: 1 1 400px; /* New: flex-basis of 400px. Content and slider will now stack properly when the total width is less than 900px (500 + 400) */
+  max-width: 500px;
+  position: relative;
 }
 
-.hero-slider {
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-    background: #fff;
-    height: 320px;
+/* --- Responsive Layout for Mobile --- */
+@media (max-width: 992px) {
+  /* Keep your existing rules here for the hamburger menu */
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  /* ... etc. */
 }
 
-.slides {
-    position: relative;
-    height: 100%;
+@media (max-width: 768px) {
+  /* Add this new media query to adjust for tablet/mobile views */
+  .hero-content,
+  .hero-slider-wrapper {
+    flex-basis: 100%; /* Now they will always stack vertically on screens smaller than 768px */
+    padding-right: 0;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem; /* Make heading smaller */
+  }
+  .hero-content h2 {
+    font-size: 1.5rem; /* Make subheading smaller */
+  }
+  .hero-slider-wrapper {
+    margin-top: 30px; /* Add space between text and slider */
+  }
 }
-
-.slide {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.slide.active {
-    opacity: 1;
-    position: relative;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background: #000;
-    border-radius: 20px;
-}
-
-.dots {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #999;
-    margin: 0 5px;
-    cursor: pointer;
-    opacity: 0.6;
-}
-
-.dot.active {
-    background: #ff6600;
-    opacity: 1;
-}
-
 .mobile-banner {
   position: relative;
   overflow: hidden;
