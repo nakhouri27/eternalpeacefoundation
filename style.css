@@ -443,6 +443,7 @@ body {
 
 
 /* Programs */
+
 .info-cards-section {
     padding: 80px 40px;
     background: #fff;
@@ -1413,6 +1414,7 @@ body {
         display: block;
     }
 }
+
 
 
 /* Default behavior: show desktop, hide mobile */
