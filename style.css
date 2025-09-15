@@ -879,14 +879,23 @@ body {
         padding: 0 20px;
     }
 
+    /* Update the carousel for mobile-centered view */
+    .story-carousel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 80%; /* Each card takes up 80% of the viewport width */
+        gap: 20px;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory; /* Centers one card at a time */
+    }
+
+    .story-box {
+        scroll-snap-align: center; /* Ensures the card snaps to the center */
+        width: auto !important; /* Override the fixed width for mobile */
+    }
+
     .arrow {
         display: none; /* Hide arrows on smaller screens for touch scrolling */
-    }
-}
-
-@media (max-width: 480px) {
-    .story-box {
-        width: 100% !important; /* Make cards full-width on very small screens */
     }
 }
 
