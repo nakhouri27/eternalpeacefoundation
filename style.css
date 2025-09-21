@@ -1258,7 +1258,8 @@ body {
 
 
 /* Banner Section */
-.banner {
+/* Banner Section */
+.desktop-banner {
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -1266,7 +1267,7 @@ body {
 
 .banner-slider {
     display: flex;
-    width: 300%;
+    width: 300%; /* Adjust width for the number of images (e.g., 3 images = 300%) */
     animation: slide 12s infinite;
 }
 
