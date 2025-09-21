@@ -287,9 +287,9 @@ body {
         position: absolute;
         top: 70px;
         right: 0;
-        background-color: #ffffff; /* Slight transparency */
+        background-color: #ffffff;
         border: 1px solid #e5e5e5;
-        backdrop-filter: blur(6px); /* Adds a modern glass effect */
+        backdrop-filter: blur(6px);
         flex-direction: column;
         width: 250px;
         height: auto;
@@ -308,17 +308,22 @@ body {
     .nav-links li a {
         font-size: 1rem;
         padding: 12px 18px;
-        color: #e5e5e5; /* White text for better contrast */
-        border-bottom: none;
+        color: #413a30; /* ➡️ Changed for better contrast */
+        border-bottom: none; /* Removes the underline from desktop styles */
         width: 100%;
-        text-align: left; /* Align text to the left */
+        text-align: left;
         border-radius: 6px;
         transition: background-color 0.2s ease;
         display: block;
     }
 
     .nav-links li a:hover {
-        background-color: #f7f7f7;
+        background-color: #f0f0f0; /* ➡️ Adjusted for a clearer hover effect */
+        color: #F58723; /* ➡️ Optional: Change text color on hover */
+    }
+
+    .nav-links li a::after {
+        width: 0 !important; /* Prevents the animated underline from showing on mobile */
     }
     
     .nav-links li a.donate-btn {
@@ -327,14 +332,13 @@ body {
 
     .hamburger {
         display: block;
-        margin-right: 1rem; /* Add some space to the right */
+        margin-right: 1rem;
     }
     
     .logo-text {
         font-size: 1.5rem;
     }
 }
-
 @media (max-width: 576px) {
     .logo-text {
         display: none;
