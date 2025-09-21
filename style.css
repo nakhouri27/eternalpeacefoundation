@@ -1527,3 +1527,134 @@ body {
         display: flex; /* This makes the sticky bar visible only on screens 768px or smaller. */
     }
 }
+
+.inspiration-section {
+    background: #faf7fc;
+    padding: 60px 20px;
+    border-top: 2px solid #e1ccec;
+    border-bottom: 2px solid #e1ccec;
+}
+
+.inspiration-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.inspiration-photo-block {
+    text-align: center;
+}
+
+.inspiration-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ff6600;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.inspiration-photo:hover {
+    transform: scale(1.05);
+}
+
+.inspiration-name {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: normal;
+    color: #000;  /* simple black */
+}
+
+
+.inspiration-text h2 {
+    font-size: 1.8rem;
+    color: #ff6600;
+    margin-bottom: 15px;
+    text-align: left; /* Keep left if you want the text left-aligned */
+    position: relative; /* Needed for positioning the ::after pseudo-element */
+    display: inline-block; /* Allows the underline to be positioned relative to the text width */
+    padding-bottom: 10px; /* Adjust this to add space between text and line */
+}
+
+.inspiration-text h2::after {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position relative to the h2 */
+    left: 50%; /* Start the line at the horizontal center of the h2 */
+    transform: translateX(-50%); /* Move it back by half its own width to truly center it */
+    bottom: 0; /* Position at the bottom of the h2 padding */
+    width: 60%; /* Adjust this percentage to control the length of the black line */
+    height: 2px; /* Adjust this for the thickness of the black line */
+    background-color: black; /* The color of the line */
+}
+
+/* Optional: If you want the h2 text itself to be centered, change text-align: left; to text-align: center; in .inspiration-text h2 */
+
+.inspiration-message {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.inspiration-quote {
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #ff6600;
+    margin-top: 15px;
+    text-align: left;
+}
+
+/* 🔹 Desktop side-by-side */
+@media (min-width: 768px) {
+    .inspiration-container {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+
+    .inspiration-photo-block {
+        margin-right: 40px;
+    }
+
+    .inspiration-text {
+        flex: 1;
+    }
+
+    .inspiration-photo-block,
+    .inspiration-photo-block .inspiration-name {
+        text-align: center;
+    }
+}
+
+/* 🔹 Mobile: text h2 above photo */
+@media (max-width: 767px) {
+    .inspiration-container {
+        flex-direction: column;
+    }
+
+    .inspiration-text {
+        order: -1; /* moves the text above the photo */
+        text-align: center; /* optional: center text on mobile */
+    }
+
+    .inspiration-photo-block {
+        order: 0; /* default order for photo */
+    }
+
+    .inspiration-text h2 {
+        margin-bottom: 15px;
+        text-align: center; /* optional */
+    }
+
+    .inspiration-message,
+    .inspiration-quote {
+        text-align: center; /* optional for mobile */
+    }
+}
