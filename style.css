@@ -512,17 +512,25 @@ body {
 }
 
 .info-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if the screen is too small */
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 20px; /* Adds space between the cards */
+    padding: 20px;
 }
 
 .card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: transform .3s;
+    /* Set a flexible width for the cards */
+    flex: 1 1 250px; /* This is a shorthand for flex-grow, flex-shrink, flex-basis */
+    /* flex-basis: 250px ensures each card is at least 250px wide before flexing */
+    max-width: 300px; /* Prevents the cards from becoming too wide on large screens */
+    margin: 10px; /* Adds a small margin around each card for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -768,7 +776,7 @@ body {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 50px; /* Add some padding for the arrows */
+    padding: 0 80px; /* Add some padding for the arrows */
 }
 
 .story-carousel {
@@ -1554,7 +1562,7 @@ body {
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid #ff6600;
+    border: 5px solid #b8860b;
     box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
     transition: transform 0.3s ease;
 }
@@ -1574,7 +1582,7 @@ body {
 
 .inspiration-text h2 {
     font-size: 1.8rem;
-    color: #ff6600;
+    color: #b8860b;
     margin-bottom: 15px;
     text-align: left; /* Keep left if you want the text left-aligned */
     position: relative; /* Needed for positioning the ::after pseudo-element */
@@ -1590,7 +1598,7 @@ body {
     bottom: 0; /* Position at the bottom of the h2 padding */
     width: 60%; /* Adjust this percentage to control the length of the black line */
     height: 2px; /* Adjust this for the thickness of the black line */
-    background-color: black; /* The color of the line */
+    background-color: #ff6600; /* The color of the line */
 }
 
 /* Optional: If you want the h2 text itself to be centered, change text-align: left; to text-align: center; in .inspiration-text h2 */
