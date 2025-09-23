@@ -803,7 +803,8 @@ body {
 }
 
 .story-box {
-    flex-shrink: 0; /* Prevents items from shrinking */
+    flex: 0 0 calc((100% - 60px) / 4); /* 4 per row, accounting for 3 gaps */
+    width: calc((100% - 60px) / 4); /* 4 cards per row, 3 gaps of 20px */
     width: 280px; /* Set a fixed width for each box */
     background-color: #fff;
     border-radius: 15px;
@@ -1267,6 +1268,7 @@ body {
     width: 100%;
     overflow: hidden;
     position: relative;
+    
 }
 
 .banner-slider {

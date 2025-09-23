@@ -57,7 +57,7 @@
         <h3 class="programs-header">Our Mission & Programs</h3>
         <div class="programs-text-container">
             <p> <span class="highlight">Eternal Peace Foundation</span>, a not-for-profit organization founded in June 2021 under Section 8 of the Companies Act, is dedicated to serving vulnerable communities with compassion, dignity, and sustainable impact.</p>  
-            <p>Operating in <strong>Ranchi, Ahmedabad, Bangalore, and Pune </strong>, we focus on initiatives that address basic needs, healthcare, education, and social welfare. From providing nutritious meals and essential supplies to children and families, to supporting hospitals, promoting education, and organizing health camps, every project is designed to uplift lives and strengthen communities.</p>
+            <p>Operating in <strong>Ranchi, Ahmedabad, Bangalore and Pune </strong>, we focus on initiatives that address basic needs, healthcare, education, and social welfare. From providing nutritious meals and essential supplies to children and families, to supporting hospitals, promoting education, and organizing health camps, every project is designed to uplift lives and strengthen communities.</p>
             <h2 class="programs-quote">“We can’t help everyone but everyone can help someone."</h2>
                 <p style="font-style: normal; margin-top: 20px; color: #c77ab9; font-weight: bold; text-align: center;">Soon, we will be expanding our services in Jamshedpur.</p>
 
@@ -216,6 +216,12 @@
                 </div>
                 <div class="story-box">
                     <div class="story-media">
+                        <img src="images/bs (2).jpg" alt="Story 5" class="story-thumb">
+                    </div>
+                    <p class="story-caption">Project Bread</p>
+                </div>
+                <div class="story-box">
+                    <div class="story-media">
                         <img src="images/portrait111.jpg" alt="Story 2" class="story-thumb">
                     </div>
                     <p class="story-caption">Project Lifeline</p>
@@ -225,6 +231,12 @@
                         <img src="images/b3.jpg" alt="Story 5" class="story-thumb">
                     </div>
                     <p class="story-caption">Project Warmth</p>
+                </div>
+                <div class="story-box">
+                    <div class="story-media">
+                        <img src="images/bs (4).jpg" alt="Story 5" class="story-thumb">
+                    </div>
+                    <p class="story-caption">Project Bread</p>
                 </div>
                 <div class="story-box">
                     <div class="story-media">
@@ -261,9 +273,16 @@
                 </div>
                 <div class="story-box">
                     <div class="story-media">
-                        <img src="images/epf team.jpg" alt="Story 5" class="story-thumb">
+                        <img src="images/bs (3).jpg" alt="Story 5" class="story-thumb">
                     </div>
-                    <p class="story-caption">EPF Team</p>
+                    <p class="story-caption">Project Bread</p>
+                </div>
+                
+                <div class="story-box">
+                    <div class="story-media">
+                        <img src="images/bs (1).jpg" alt="Story 5" class="story-thumb">
+                    </div>
+                    <p class="story-caption">Project Bread</p>
                 </div>
                 <div class="story-box">
                     <div class="story-media">
@@ -303,7 +322,14 @@
                     </div>
                     <p class="story-caption">Project Bread</p>
                 </div>
+                <div class="story-box">
+                    <div class="story-media">
+                        <img src="images/epf team.jpg" alt="Story 5" class="story-thumb">
+                    </div>
+                    <p class="story-caption">EPF Team</p>
+                </div>
             </div>
+            
             <button class="arrow right-arrow">&#10095;</button>
         </div>
     </section>
@@ -531,28 +557,34 @@
     <a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?fbclid=PAZXh0bgNhZW0CMTEAAac6UifcePBvD3MSPhCnPdgxIa8WhVpzW9lL8yfyaOSXHSESJmH7k44xcTSQ-g_aem_Z7giIB02QEuF96WkFkfzjA&edit_requested=true" target="_blank" class="cta-button volunteer-btn">Volunteer</a>
 </div>
 
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.querySelector(".story-carousel");
     const boxes = document.querySelectorAll(".story-box");
-    const boxWidth = boxes[0].offsetWidth + 20; // card width + gap (20px in your CSS)
+    const boxWidth = boxes[0].offsetWidth + 20; // card width + gap
     const intervalTime = 3000; // 3 seconds
 
     let currentIndex = 0;
     let autoScroll = setInterval(moveCarousel, intervalTime);
 
     function moveCarousel() {
-        currentIndex++;
-        if (currentIndex >= boxes.length) {
-            currentIndex = 0; // reset to start
+        const visibleCount = Math.floor(carousel.offsetWidth / boxWidth); // how many fit on screen
+        const maxIndex = boxes.length - visibleCount; // last fully visible index
+
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // reset cleanly
         }
+
         carousel.scrollTo({
             left: currentIndex * boxWidth,
             behavior: "smooth"
         });
     }
 
-    // Pause on hover
+    // Pause auto-scroll on hover/touch
     carousel.addEventListener("mouseover", () => clearInterval(autoScroll));
     carousel.addEventListener("mouseout", () => {
         autoScroll = setInterval(moveCarousel, intervalTime);
