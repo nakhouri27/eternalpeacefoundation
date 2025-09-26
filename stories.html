@@ -4,407 +4,584 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Success Stories — Eternal Peace Foundation</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
-/* ================= Base ================= */
-:root{
-  --accent:#ff6600;
-  --bg:#fff7f0;
-  --card:#fff;
-  --text:#333;
-  --muted:#555;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  padding-top:60px; /* space for fixed nav */
+/* ================= Base & Colors ================= */
+:root {
+  --accent: #ff6600;
+  --accent-light: #ff8c42;
+  --bg: #fffcf8;
+  --bg-secondary: #fdf2e9;
+  --card: #fff;
+  --text: #2c2c2c;
+  --muted: #6a6a6a;
+  --dark-bg: #1f1f1f;
 }
 
-/* ================= New Fixed Buttons Nav ================= */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: 70px; /* Space for fixed nav */
+}
+
+a { color: var(--accent); text-decoration: none; transition: color 0.3s ease; }
+
+/* ================= Fixed Header & Nav ================= */
 .fixed-buttons-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--card);
+  padding: 10px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  height: 70px;
 }
 
-/* Style for all buttons and links in the fixed container */
-.fixed-buttons-container button,
-.fixed-buttons-container a {
-    padding: 10px 20px;
-    font-size: 14px;
-    background-color: #ff5722;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none; /* Removes underline from links */
-    display: inline-block;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.fixed-buttons-container .action-button {
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);
 }
 
-/* Hover effect */
-.fixed-buttons-container button:hover,
-.fixed-buttons-container a:hover {
-    background-color: #e64a19;
+.fixed-buttons-container .action-button:hover {
+  background-color: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 102, 0, 0.4);
 }
 
-/* Style for the Home button */
 .fixed-buttons-container .home-button {
-    margin-right: auto;
-    background-color: transparent;
-    color: #ff5722;
-    border: 1px solid #ff5722;
+  margin-right: auto;
+  background-color: transparent;
+  color: var(--text);
+  border: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 5px 10px;
 }
-.fixed-buttons-container .home-button:hover {
-    background-color: #ff5722;
-    color: #fff;
-}
+.fixed-buttons-container .home-button:hover { color: var(--accent); }
 
 /* ================= Section wrapper & title ================= */
-.success-section{
-  padding:28px 18px 80px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  gap:28px;
-  max-width:1300px;
-  margin:0 auto;
-}
-
-.page-title{
-  text-align:center;
-  font-size:2.6rem;
-  color:var(--accent);
-  font-weight:800;
-  text-transform:uppercase;
-  margin:6px 0 6px;
-  letter-spacing:.6px;
-}
-.page-title::after{
-  content:"";
-  display:block;
-  width:84px;
-  height:6px;
-  background:var(--accent);
-  margin:12px auto 0;
-  border-radius:3px;
+.success-section {
+  padding: 10px 15px 80px;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
 /* ================= Story card ================= */
-.success-box{
-  width:100%;
-  background:var(--card);
-  border-radius:18px;
-  padding:26px;
-  box-shadow:0 14px 40px rgba(11,15,20,0.06);
-  display:flex;
-  flex-direction:column;
-  gap:18px;
+.success-box {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 6px solid var(--accent);
 }
+.success-box:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
 
-/* layout inside each box */
-.story-container{
-  display:flex;
-  gap:28px;
-  flex-direction:column;
-}
+.story-container { display: flex; gap: 40px; flex-direction: column; }
+.story-text { text-align: left; }
+.story-text h3 { font-size: 1.6rem; margin: 0 0 15px; color: var(--text); font-weight: 700; }
+.story-text p { margin: 0 0 15px; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
 
-/* text block */
-.story-text {
-  text-align:center;
-}
-.story-text h3{
-  font-size:1.4rem;
-  margin:0 0 10px;
-  color:var(--text);
-  font-weight:700;
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 4px;
-}
-.story-text p{
-  margin:0 0 12px;
-  color:var(--muted);
-  font-size:1rem;
-  line-height:1.7;
-  font-style: italic;
-}
-
-/* ================= Video block ================= */
-.story-video {
+/* ================= Video Card ================= */
+.video-card {
   width: 100%;
-  max-width: 320px;
+  max-width: 280px;
+  height: 360px;          /* set fixed height */
+  aspect-ratio: auto;   
   margin: 0 auto;
   position: relative;
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   background: #000;
-  border: 3px solid var(--accent);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
   cursor: pointer;
-  aspect-ratio: 9 / 16;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.video-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
 
-.story-video video {
+/* layering: video below overlay, play button on top */
+.video-card video {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  z-index: 1;
+  border-radius: 14px;
+  z-index: 2;
   opacity: 0;
-  transition: opacity .3s ease;
+  transition: opacity 0.28s ease;
+  background: #000;
 }
-.story-video video.show { opacity: 1; }
-
-.video-overlay {
+.video-card .video-overlay {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
+  z-index: 3;
+  display: block;
+}
+.video-card .video-overlay.hidden { display: none; }
+
+.video-card video.show {
+  opacity: 1;
   z-index: 2;
 }
-.video-overlay.hidden { display: none; }
 
-.play-button {
+.video-card .play-button {
   position: absolute;
-  left: 50%; top: 50%;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  width: 84px; height: 84px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: #fff;
-  z-index: 3;
+  z-index: 4;
   pointer-events: none;
+  transition: background 0.3s ease;
 }
-.play-button.hidden { display: none; }
+.video-card:hover .play-button { background: rgba(0,0,0,0.75); }
+.video-card .play-button.hidden { display: none; }
 
-/* Desktop adjustments */
-@media(min-width:800px){
-  .story-video { max-width: 280px; aspect-ratio: 3/4; max-height: 420px; }
+/* ================= Short Success Clips Gallery ================= */
+.gallery-section {
+  padding: 40px 0;
+  background-color: var(--bg-secondary);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 20px;
 }
-@media(min-width: 800px){
-  .story-container {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-  .story-text {
-    flex: 1;
-    text-align: left;
-  }
-  .story-video { flex-shrink: 0; }
+.gallery-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 0 30px;
+  color: var(--text);
+  font-weight: 800;
 }
 
-/* Mobile adjustments */
-@media(max-width:520px){
-  .story-video { max-width: 260px; }
+.video-gallery {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 30px 20px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.video-gallery::-webkit-scrollbar { display: none; }
+
+.video-gallery-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  flex-basis: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.video-gallery-item:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); }
+.video-gallery-item h4 { font-size: 1.3rem; margin-bottom: 8px; color: var(--accent); font-weight: 700; }
+.video-gallery-item p { font-size: 0.9rem; line-height: 1.5; margin-top: 15px; color: var(--muted); }
+
+/* Responsive Adjustments */
+@media (min-width: 800px) {
+  .story-container { flex-direction: row; align-items: flex-start; justify-content: space-between; }
+  .story-text { flex: 1; text-align: left; padding-right: 20px; }
+  .video-card { flex-shrink: 0; margin: 0; max-width: 300px; aspect-ratio: 3 / 4; max-height: 400px; }
+}
+@media (max-width: 600px) {
+  .fixed-buttons-container .nav-title { display: none; }
+}
+@media (max-width: 520px) {
+  .fixed-buttons-container { padding: 10px 10px; }
+  .fixed-buttons-container .action-button { padding: 8px 12px; font-size: 13px; }
+  .success-section { padding: 10px 10px 60px; }
+  .success-box { padding: 15px; }
+  .video-gallery { padding: 10px 15px 20px; }
+  .video-gallery-item { flex-basis: 260px; }
 }
 
 /* ================= Footer ================= */
-.footer {
-    background: #222;
-    color: #ccc;
-    padding: 50px 40px 20px;
-}
+.footer { background: var(--dark-bg); color: #e0e0e0; padding: 80px 0 30px; }
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
+  max-width: 1200px; margin: 0 auto; padding: 0 20px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;
+  padding-bottom: 40px; border-bottom: 1px solid #333;
 }
-.footer-about,
-.footer-links,
-.footer-contact {
-    flex: 1;
-    min-width: 200px;
+.footer-section h3, .footer-section h4 { color: var(--accent); font-weight: 700; margin-bottom: 20px; font-size: 1.1rem; padding-bottom: 12px; position: relative; }
+.footer-section h3::after, .footer-section h4::after { content: ""; display: block; width: 30px; height: 3px; background: #fff; position: absolute; bottom: 0; left: 0; border-radius: 2px; }
+.footer-about p { font-size: 0.95rem; line-height: 1.6; }
+.footer-links ul { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a, .footer-contact p { color: #e0e0e0; text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.footer-contact .contact-info p { margin-bottom: 10px; }
+.social-icons { margin-top: 20px; display: flex; gap: 10px; }
+.social-icons a { display: inline-block; width: 36px; height: 36px; background-color: #333; border-radius: 50%; transition: background-color 0.3s ease, transform 0.2s ease; display: flex; align-items: center; justify-content: center; }
+.social-icons a:hover { background-color: var(--accent); transform: translateY(-2px); }
+.social-icons a img { width: 20px; filter: invert(1); margin: 0; }
+.footer-bottom { max-width: 1200px; margin: 30px auto 0; padding: 0 20px; text-align: center; font-size: 0.85rem; color: #a0a0a0; }
+
+@media (max-width: 768px) {
+  .footer-container { grid-template-columns: 1fr; text-align: center; }
+  .footer-section h3::after, .footer-section h4::after { left: 50%; transform: translateX(-50%); }
+  .social-icons { justify-content: center; }
 }
-.footer-about h3 { color: #fff; margin-bottom: 20px; }
-.footer-links h4,
-.footer-contact h4 { color: #fff; margin-bottom: 15px; }
-.footer-links ul { list-style: none; }
-.footer-links a { color: #ccc; text-decoration: none; }
-.footer-links a:hover { text-decoration: underline; }
-.social-icons a img { width: 25px; margin-right: 10px; }
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 0.9rem;
-    color: #888;
+@media (max-width: 768px) {
+  .story-container {
+    flex-direction: column;
+  }
+  .story-container .video-card {
+    order: 2; /* Moves video above text */
+    margin-bottom: 20px; /* Space between video and heading */
+  }
 }
-.footer-contact .social-icons { margin-top: 15px; }
+
 </style>
 </head>
 <body>
 
-<!-- New Fixed Buttons Navigation -->
 <div class="fixed-buttons-container">
-  <a href="index.html" class="home-button">Home</a>
-  <a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?fbclid=PAZXh0bgNhZW0CMTEAAac6UifcePBvD3MSPhCnPdgxIa8WhVpzW9lL8yfyaOSXHSESJmH7k44xcTSQ-g_aem_Z7giIB02QEuF96WkFkfzjA&edit_requested=true" target="_blank">Volunteer</a>
-  <a href="maintenance.html" target="_blank">Donate</a>
+    <a href="stories.html" class="home-button"><span class="nav-title"> | STORIES OF HOPE</span></a>
+    <a href="maintenance.html" target="_blank" class="action-button">Home</a>
+    <a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?usp=sharing" target="_blank" class="action-button">Join Us</a>
+    <a href="maintenance.html" target="_blank" class="action-button">Donate</a>
+    
 </div>
 
-<!-- success stories -->
 <section class="success-section" aria-labelledby="stories-heading">
-  <h1 id="stories-heading" class="page-title">Stories of Hope</h1>
+    <article class="success-box" aria-labelledby="s1-title">
+        <div class="story-container">
+            <div class="story-text">
+                <h3 id="s1-title">Project Bread: Reaching Hearts, Wherever They Are</h3>
+                <p>A middle-aged man from Vishakhapatnam reached out to us for help with groceries. Even though Eternal Peace Foundation is not in his city, we could not ignore his need. Using our trusted contacts, we were able to provide him with the ration and essentials he needed.</p>
+                <p>This shows that kindness has no boundaries. Even far away, we can make a difference in someone’s life and bring hope when it is needed the most. Every small act of care can lighten someone’s burden and remind them that they are not alone. Stories like these inspire us to continue reaching out and helping wherever we can.</p>
+            </div>
+            <div class="video-card" data-video-src="images/vsp.mp4" role="button" aria-label="Play Project Bread video">
+                <img class="video-overlay" src="images/vsp1.jpg" alt="Project Bread thumbnail">
+                <video playsinline preload="metadata" aria-hidden="true">
+                    <source src="images/vsp.mp4" type="video/mp4">
+                </video>
+                <div class="play-button" aria-hidden="true">▶</div>
+            </div>
+        </div>
+    </article>
 
-  <!-- Story 1 -->
-  <article class="success-box" aria-labelledby="s1-title">
-    <div class="story-container">
-      <div class="story-text">
-        <h3 id="s1-title">Project Bread: Reaching Hearts, Wherever They Are</h3>
-        <p>A middle-aged man from Vishakhapatnam reached out to us for help with groceries. Even though Eternal Peace Foundation is not in his city, we could not ignore his need. Using our trusted contacts, we were able to provide him with the ration and essentials he needed.</p>
-        <p>This shows that kindness has no boundaries. Even far away, we can make a difference in someone’s life and bring hope when it is needed the most. Every small act of care can lighten someone’s burden and remind them that they are not alone. Stories like these inspire us to continue reaching out and helping wherever we can.</p>
-      </div>
+    <article class="success-box" aria-labelledby="s2-title">
+        <div class="story-container">
+            <div class="story-text">
+                <h3 id="s2-title">Project Lifeline: A Step Towards Hope</h3>
+                <p>A handicapped man with only one leg from Nawada reached out to us for medical treatment. Even though Eternal Peace Foundation is not present in his city, we could not ignore his pain. Through our trusted contacts, we arranged the medicines and treatment he needed.</p>
+                <p>This act was not just about providing medical help — it was about giving him hope, dignity, and the strength to move forward in life. Seeing him overcome his struggles, even in small steps, reminded us that kindness can reach beyond miles. His smile after receiving support filled our hearts, reaffirming that every effort matters, and no distance should ever stop compassion.</p>
+            </div>
+            <div class="video-card" data-video-src="images/story1.mp4" role="button" aria-label="Play Project Lifeline video">
+                <img class="video-overlay" src="images/story1.jpg" alt="Project Lifeline thumbnail">
+                <video playsinline preload="metadata" aria-hidden="true">
+                    <source src="images/story1.mp4" type="video/mp4">
+                </video>
+                <div class="play-button" aria-hidden="true">▶</div>
+            </div>
+        </div>
+    </article>
 
-      <div class="story-video" data-video-src="images/vsp.mp4" role="button" aria-label="Play Project Bread video">
-        <img class="video-overlay" src="images/vsp1.jpg" alt="">
-        <video playsinline preload="metadata">
-          <source src="images/vsp.mp4" type="video/mp4">
-        </video>
-        <div class="play-button" aria-hidden="true">▶</div>
-      </div>
-    </div>
-  </article>
+    <article class="success-box" aria-labelledby="s2-title">
+        <div class="story-container">
+            <div class="story-text">
+                <h3 id="s2-title">Project Growth: Miles of Awareness</h3>
+                <p>A passionate youngster set out on an extraordinary journey — walking over 5,000 km across India to spread the life-saving message of blood donation. His mission was to inspire people everywhere to step forward and donate blood, a simple act that can save countless lives. His determination and courage turned every step into a message of hope and humanity.</p>
+                <p>Eternal Peace Foundation was humbled to support his remarkable mission by sponsoring his meals for a day. Though our contribution was small, we take pride in having encouraged his noble cause. His journey reminds us that even the smallest support can strengthen a great effort, and together, these efforts create ripples of positive change.</p>
+            </div>
+            <div class="video-card" data-video-src="images/story1.mp4" role="button" aria-label="Play Project Lifeline video">
+                <img class="video-overlay" src="images/vsp5.png" alt="Project Lifeline thumbnail">
+                <video playsinline preload="metadata" aria-hidden="true">
+                    <source src="images/vsp2.mp4" type="video/mp4">
+                </video>
+                <div class="play-button" aria-hidden="true">▶</div>
+            </div>
+        </div>
+    </article>
 
-  <!-- Story 2 -->
-  <article class="success-box" aria-labelledby="s2-title">
-    <div class="story-container">
-      <div class="story-text">
-        <h3 id="s2-title">Project Lifeline: A Step Towards Hope</h3>
-        <p>A handicapped man with only one leg from Nawada reached out to us for medical treatment. Even though Eternal Peace Foundation is not present in his city, we could not ignore his pain. Through our trusted contacts, we arranged the medicines and treatment he needed.</p>
-        <p>This act was not just about providing medical help — it was about giving him hope, dignity, and the strength to move forward in life. Seeing him overcome his struggles, even in small steps, reminded us that kindness can reach beyond miles. His smile after receiving support filled our hearts, reaffirming that every effort matters, and no distance should ever stop compassion.</p>
-      </div>
+    <section class="gallery-section" aria-labelledby="mini-video-heading">
+        <h2 id="mini-video-heading">Short Success Clips</h2>
+        <div class="video-gallery" aria-live="polite">
 
-      <div class="story-video" data-video-src="images/story1.mp4" role="button" aria-label="Play Project Lifeline video">
-        <img class="video-overlay" src="images/story1.jpg" alt="">
-        <video playsinline preload="metadata">
-          <source src="images/story1.mp4" type="video/mp4">
-        </video>
-        <div class="play-button" aria-hidden="true">▶</div>
-      </div>
-    </div>
-  </article>
+          <article class="video-gallery-item">
+                <h4>PROJECT LIFELINE</h4>
+                <div class="video-card" style="aspect-ratio: 1/1; max-width: 260px; margin: 0 auto;" role="button" aria-label="Play Project Lifeline Impact video">
+                    <img class="video-overlay" src="images/tp1.jpg" alt="Project Lifeline Thumbnail">
+                    <video playsinline preload="metadata" aria-hidden="true">
+                        <source src="images/story4.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-button" aria-hidden="true">▶</div>
+                </div>
+                <p>See how Project Lifeline brought crucial medical help and dignity to those in need.</p>
+            </article>
+
+          <article class="video-gallery-item">
+                <h4>PROJECT LIFELINE</h4>
+                <div class="video-card" style="aspect-ratio: 1/1; max-width: 260px; margin: 0 auto;" role="button" aria-label="Play New Life Hospital Visit video">
+                    <img class="video-overlay" src="images/portrait111.jpg" alt="New Life Hospital Visit Thumbnail">
+                    <video playsinline preload="metadata" aria-hidden="true">
+                        <source src="images/story3.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-button" aria-hidden="true">▶</div>
+                </div>
+                <p>This clip highlights the moment we donated a hospital bed to New Life Hospital, Ranchi.</p>
+            </article>
+
+            
+
+            <article class="video-gallery-item">
+                <h4>PROJECT BREAD</h4>
+                <div class="video-card" style="aspect-ratio: 1/1; max-width: 260px; margin: 0 auto;" role="button" aria-label="Play Food Distribution Drive video">
+                    <img class="video-overlay" src="images/tp2.jpg" alt="Food Distribution Thumbnail">
+                    <video playsinline preload="metadata" aria-hidden="true">
+                        <source src="images/story5.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-button" aria-hidden="true">▶</div>
+                </div>
+                <p>Watch a representative of Aanchal Shishu Aashram speak about our ration donation to their community.</p>
+            </article>
+
+            <!-- keep duplicates if you want more cards — included to match original repetition -->
+            <article class="video-gallery-item">
+                <h4>PROJECT WARMTH</h4>
+                <div class="video-card" style="aspect-ratio: 1/1; max-width: 260px; margin: 0 auto;" role="button" aria-label="Play Food Distribution Drive video">
+                    <img class="video-overlay" src="images/food-thumb.jpg" alt="Food Distribution Thumbnail">
+                    <video playsinline preload="metadata" aria-hidden="true">
+                        <source src="images/story6.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-button" aria-hidden="true">▶</div>
+                </div>
+                <p>Highlights from our blanket distribution drive in Patba.</p>
+            </article>
+
+
+        </div>
+    </section>
+
 </section>
 
 <script>
-(function(){
-  const boxes = Array.from(document.querySelectorAll('.story-video'));
+/*
+  Video play/pause logic (works for main story cards + gallery cards)
+  + keyboard support (Enter / Space)
+  + gallery auto-slide with pause-on-hover/touch and pause-while-playing
+*/
+document.addEventListener('DOMContentLoaded', function () {
+  const boxes = Array.from(document.querySelectorAll('.video-card'));
 
-  function pauseAllExcept(exceptVideo){
-    boxes.forEach(box=>{
+  function pauseAllExcept(exceptVideo) {
+    boxes.forEach(box => {
       const vid = box.querySelector('video');
       const overlay = box.querySelector('.video-overlay');
       const btn = box.querySelector('.play-button');
-      if(vid !== exceptVideo){
-        if(!vid.paused){ vid.pause(); }
-        overlay.classList.remove('hidden');
-        btn.classList.remove('hidden');
+      if (!vid) return;
+      if (vid !== exceptVideo) {
+        try { vid.pause(); } catch (e) {}
+        if (overlay) overlay.classList.remove('hidden');
+        if (btn) btn.classList.remove('hidden');
         vid.classList.remove('show');
       }
     });
   }
 
-  boxes.forEach(box=>{
+  boxes.forEach(box => {
     const video = box.querySelector('video');
     const overlay = box.querySelector('.video-overlay');
     const btn = box.querySelector('.play-button');
 
-    if(!overlay.getAttribute('src') && video.getAttribute('poster')){
-      overlay.src = video.getAttribute('poster');
-    }
+    if (!video) return;
 
-    box.addEventListener('click', ()=>{
-      if(video.paused){
+    // make the card keyboard-focusable for accessibility
+    box.setAttribute('tabindex', '0');
+
+    // toggle play/pause on click
+    box.addEventListener('click', (ev) => {
+      // If the user clicked a link inside, don't intercept (not the case here, but safe)
+      if (ev.target && ev.target.closest && ev.target.closest('a')) return;
+
+      if (video.paused) {
         pauseAllExcept(video);
-        overlay.classList.add('hidden');
-        btn.classList.add('hidden');
+        if (overlay) overlay.classList.add('hidden');
+        if (btn) btn.classList.add('hidden');
         video.classList.add('show');
+        // play (catch promise rejection on mobile/autoplay restrictions)
         const p = video.play();
-        if(p && p.catch){
-          p.catch(err=>{
+        if (p && p.catch) {
+          p.catch(err => {
             console.warn('Playback failed:', err);
-            overlay.classList.remove('hidden');
-            btn.classList.remove('hidden');
+            if (overlay) overlay.classList.remove('hidden');
+            if (btn) btn.classList.remove('hidden');
             video.classList.remove('show');
           });
         }
       } else {
-        video.pause();
-        overlay.classList.remove('hidden');
-        btn.classList.remove('hidden');
+        try { video.pause(); } catch (e) {}
+        if (overlay) overlay.classList.remove('hidden');
+        if (btn) btn.classList.remove('hidden');
         video.classList.remove('show');
-        try{ video.currentTime = 0; }catch(e){}
+        try { video.currentTime = 0; } catch (e) {}
       }
     });
 
-    video.addEventListener('ended', ()=>{
-      overlay.classList.remove('hidden');
-      btn.classList.remove('hidden');
+    // when video ends, reset UI
+    video.addEventListener('ended', () => {
+      if (overlay) overlay.classList.remove('hidden');
+      if (btn) btn.classList.remove('hidden');
       video.classList.remove('show');
-      try{ video.currentTime = 0; }catch(e){}
+      try { video.currentTime = 0; } catch (e) {}
     });
 
-    box.addEventListener('keydown', (ev)=>{
-      if(ev.key === ' ' || ev.key === 'Enter'){
+    // keyboard support: Space or Enter toggles play/pause
+    box.addEventListener('keydown', (ev) => {
+      if (ev.key === ' ' || ev.key === 'Spacebar' || ev.key === 'Enter') {
         ev.preventDefault();
         box.click();
       }
     });
-
-    box.setAttribute('tabindex','0');
   });
-})();
+
+  /* ===== Gallery auto-slide ===== */
+  const gallery = document.querySelector('.video-gallery');
+  if (!gallery) return;
+
+  let autoSlideTimer = null;
+  const AUTO_DELAY = 4000;
+  let isPaused = false;
+
+  function autoSlideTick() {
+    if (isPaused) return;
+    const items = gallery.querySelectorAll('.video-gallery-item');
+    if (!items || items.length === 0) return;
+
+    const gap = parseFloat(getComputedStyle(gallery).gap) || 25;
+    // measure one item width (first item)
+    const itemWidth = items[0].offsetWidth + gap;
+    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+    const nextPos = Math.min(gallery.scrollLeft + itemWidth, maxScroll);
+
+    if (gallery.scrollLeft >= maxScroll - 2) {
+      // if at (or very near) end, smoothly go back to start
+      gallery.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      gallery.scrollTo({ left: nextPos, behavior: 'smooth' });
+    }
+  }
+
+  function startAutoSlide() {
+    if (autoSlideTimer) return;
+    autoSlideTimer = setInterval(autoSlideTick, AUTO_DELAY);
+  }
+  function stopAutoSlide() {
+    if (!autoSlideTimer) return;
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = null;
+  }
+
+  // pause when hovered, touched, or focused
+  gallery.addEventListener('mouseenter', () => { isPaused = true; });
+  gallery.addEventListener('mouseleave', () => { isPaused = false; });
+  gallery.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
+  gallery.addEventListener('touchend', () => { isPaused = false; }, { passive: true });
+  gallery.addEventListener('focusin', () => { isPaused = true; });
+  gallery.addEventListener('focusout', () => { isPaused = false; });
+
+  // If any video plays, pause auto sliding (so user can watch)
+  boxes.forEach(box => {
+    const v = box.querySelector('video');
+    if (!v) return;
+    v.addEventListener('play', () => { isPaused = true; });
+    v.addEventListener('pause', () => { isPaused = false; });
+    v.addEventListener('ended', () => { isPaused = false; });
+  });
+
+  // start the auto slide loop
+  startAutoSlide();
+
+  // keep layout measurements up-to-date (avoid stale widths)
+  window.addEventListener('resize', () => {
+    // small debounce
+    if (autoSlideTimer) {
+      stopAutoSlide();
+      setTimeout(startAutoSlide, 350);
+    }
+  });
+});
 </script>
 
 <footer class="footer">
-  <div class="footer-container">
-      <div class="footer-about">
-          <h3>Eternal Peace Foundation</h3>
-          <p>We can't help everyone but everyone can help someone.</p>
-      </div>
-      <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="events.html" target="_blank">About Us</a></li>
-              <li><a href="stories.html" target="_blank">Success Stories</a></li>
-              <li><a href="maintenance.html" target="_blank">Donate</a></li>
-              <li><a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?fbclid=PAZXh0bgNhZW0CMTEAAac6UifcePBvD3MSPhCnPdgxIa8WhVpzW9lL8yfyaOSXHSESJmH7k44xcTSQ-g_aem_Z7giIB02QEuF96WkFkfzjA&edit_requested=true" target="_blank" class="btn primary volunteer-link" target="_blank">Volunteer</a></li>
-              <li><a href="#contact-us">Contact</a></li>
-          </ul>
-      </div>
-      <div class="footer-contact" id="contact-us">
-          <h4>Contact Us</h4>
-          <p>Email: teameternalpeace@gmail.com</p>
-          <p>Phone: +919155091311</p>
-          <div class="social-icons">
-              <a href="https://www.facebook.com/eternalpeacefoundation/" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
-              <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-              <a href="https://www.instagram.com/eternalpeacefoundation/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
-          </div>
-      </div>
+<div class="footer-container">
+  <div class="footer-about footer-section">
+    <h3>Eternal Peace Foundation</h3>
+    <p>We can't help everyone but everyone can help someone. Our mission is to reach out with love, compassion, and practical help to those who need it most.</p>
   </div>
-  <div class="footer-bottom">
-      &copy; 2025 Eternal Peace Foundation. All rights reserved.
+
+  <div class="footer-links footer-section">
+    <h4>Quick Links</h4>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html" target="_blank">About Us</a></li>
+      <li><a href="stories.html" target="_blank">Success Stories</a></li>
+      <li><a href="maintenance.html" target="_blank">Donate</a></li>
+      <li><a href="https://docs.google.com/forms/d/1t49hPEms-Vg839bwBHzt-X04ftevtZtJw11gyH9KPRw/viewform?fbclid=PAZXh0bgNhZW0CMTEAAac6UifcePBvD3MSPhCnPdgxIa8WhVpzW9lL8yfyaOSXHSESJmH7k44xcTSQ-g_aem_Z7giIB02QEuF96WkFkfzjA&edit_requested=true" target="_blank">Volunteer</a></li>
+      <li><a href="#contact-us">Contact</a></li>
+    </ul>
   </div>
+
+  <div class="footer-contact footer-section" id="contact-us">
+    <h4>Get In Touch</h4>
+    <div class="contact-info">
+      <p>Email: teameternalpeace@gmail.com</p>
+      <p>Phone: +919155091311</p>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/eternalpeacefoundation/" target="_blank" aria-label="Follow us on Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+      <a href="#" aria-label="Follow us on Twitter"><img src="images/twitter.png" alt="Twitter"></a>
+      <a href="https://www.instagram.com/eternalpeacefoundation/" target="_blank" aria-label="Follow us on Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bottom">&copy; 2025 Eternal Peace Foundation. All rights reserved.</div>
 </footer>
 </body>
 </html>
