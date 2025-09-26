@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eternal Peace Foundation - Events</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -31,7 +30,7 @@
       font-size: 18px;
     }
 
-    /* New container for fixed buttons */
+    /* Fixed buttons */
     .fixed-buttons-container {
         position: fixed;
         top: 0;
@@ -47,7 +46,6 @@
         gap: 15px;
     }
 
-    /* Style for all buttons and links in the fixed container */
     .fixed-buttons-container button,
     .fixed-buttons-container a {
       padding: 10px 20px;
@@ -57,12 +55,11 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      text-decoration: none; /* Removes underline from links */
-      display: inline-block; /* Makes the link behave like a button */
+      text-decoration: none;
+      display: inline-block;
       text-align: center;
     }
     
-    /* Style for the new Home button */
     .fixed-buttons-container .home-button {
       margin-right: auto;
       background-color: transparent;
@@ -70,7 +67,7 @@
       border: 1px solid #ff5722;
     }
 
-    /* ABOUT SECTION (REDESIGNED) */
+    /* ABOUT */
     .about-section {
       background: linear-gradient(135deg, #ff7043, #ff5722);
       padding: 80px 20px;
@@ -109,7 +106,7 @@
       margin-top: 6px;
     }
 
-    /* NEW LAYOUT FOR PROJECT SECTIONS */
+    /* PROJECT SECTIONS */
     .project-section {
       display: flex;
       flex-direction: row;
@@ -119,7 +116,6 @@
       gap: 50px;
     }
 
-    /* Alternating background colors for sections */
     .project-section:nth-child(even) {
       background-color: #fcfcfc;
     }
@@ -152,7 +148,7 @@
       margin-bottom: 25px;
     }
 
-    /* SLIDER STYLING */
+    /* SLIDER */
     .slider {
       position: relative;
       width: 100%;
@@ -167,10 +163,11 @@
       display: flex;
       width: 100%;
       height: 100%;
-      transition: transform 0.5s ease-in-out;
+      transition: transform 1s ease-in-out;
     }
 
-    .slides img {
+    .slides img,
+    .slides video {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -191,50 +188,10 @@
       z-index: 10;
     }
 
-    .prev {
-      left: 10px;
-    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
 
-    .next {
-      right: 10px;
-    }
-
-    .pricing {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .pricing div {
-      padding: 8px 15px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-align: center;
-      font-size: 0.9em;
-    }
-
-    .pricing .packet1,
-    .pricing .student1 {
-      background-color: #ffe0b2;
-      color: #bf360c;
-    }
-
-    .pricing .packet5,
-    .pricing .student5 {
-      background-color: #ffd54f;
-      color: #ff6f00;
-    }
-
-    .pricing .month,
-    .pricing .books,
-    .pricing .competition {
-      background-color: #ffccbc;
-      color: #d84315;
-    }
-
-    /* FOOTER */
+/* FOOTER */
     .footer {
       background: #333;
       color: #fff;
@@ -255,65 +212,85 @@
       color: #fff;
     }
 
-    .footer-links ul {
-      list-style: none;
-      padding: 0;
-    }
 
-    .footer-links ul li {
-      margin-bottom: 8px;
-    }
+.footer-about p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+}
 
-    .footer-links ul li a {
-      color: #fff;
-      text-decoration: none;
-    }
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
 
-    .footer-bottom {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
+.footer-links ul li {
+  margin-bottom: 8px;
+}
 
-    /* MEDIA QUERIES FOR MOBILE */
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #ff5722;
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  color: #ccc;
+}
+
+.footer-contact a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #ff5722;
+}
+
+.social-icons {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+  filter: brightness(0) saturate(100%) invert(42%) sepia(94%) saturate(2143%) hue-rotate(347deg) brightness(99%) contrast(96%);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+    /* MOBILE */
     @media (max-width: 768px) {
-      body {
-        padding-top: 100px;
-      }
-      .project-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-      }
-
-      .project-content,
-      .project-media {
-        flex: auto;
-        max-width: 100%;
-      }
-
-      .project-section h2 {
-        font-size: 2rem;
-      }
-
-      .fixed-buttons-container {
-        justify-content: center;
-      }
-      
-      .fixed-buttons-container .home-button {
-          margin-right: 0;
-      }
-
-      .about-container {
-        padding: 25px 20px;
-      }
-      .about-container h1 {
-        font-size: 2rem;
-      }
-      .about-container p {
-        font-size: 1rem;
-      }
+      body { padding-top: 100px; }
+      .project-section { flex-direction: column; text-align: center; padding: 40px 20px; }
+      .project-content, .project-media { flex: auto; max-width: 100%; }
+      .project-section h2 { font-size: 2rem; }
+      .fixed-buttons-container { justify-content: center; }
+      .fixed-buttons-container .home-button { margin-right: 0; }
+      .about-container { padding: 25px 20px; }
+      .about-container h1 { font-size: 2rem; }
+      .about-container p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -325,7 +302,7 @@
     <button>Donate Now</button>
   </div>
 
-  <!-- ABOUT SECTION (REDESIGNED) -->
+  <!-- ABOUT SECTION -->
   <header class="about-section">
     <div class="about-container">
       <h1>ABOUT US</h1>
@@ -335,26 +312,26 @@
       <p>
         Over the years, we have worked with a clear vision — to create a society where no one is left behind due to poverty, lack of healthcare, or social inequality. Our approach is rooted in empathy and action, ensuring that support reaches people in their moments of greatest need.
       </p>
-
       <p>
         Operating in <strong>Ranchi, Ahmedabad, Bangalore, and Pune </strong> we focus on initiatives that address basic needs, healthcare, education, and social welfare. From providing nutritious meals and essential supplies to children and families, to supporting hospitals, promoting education, and organizing health camps, every project is designed to uplift lives and strengthen communities.
       </p>
     </div>
   </header>
 
+  <!-- PROJECT BREAD -->
   <section class="project-section" id="project-bread">
     <div class="project-content">
       <h2>PROJECT BREAD</h2>
-      <p>Hunger is a silent struggle, but it doesn't have to be. Through Project Bread, we've fought hunger head-on by distributing **more than 10,000 fresh meals and essential ration kits** to those in need. Our dedicated teams work tirelessly in communities across **Ranchi, Ahmedabad, and Bangalore** to ensure that no one goes to bed hungry.</p>
+      <p>Hunger is a silent struggle, but it doesn't have to be. Through Project Bread, we've fought hunger head-on by distributing <strong>more than 10,000 fresh meals and essential ration kits</strong> to those in need. Our dedicated teams work tirelessly in communities across <strong>Ranchi, Ahmedabad, and Bangalore</strong> to ensure that no one goes to bed hungry.</p>
       <p>This project is more than just providing food; it's about restoring dignity and security to families facing unimaginable challenges. By offering consistent support, we aim to create a ripple effect of stability and well-being, proving that a compassionate community can change lives, one meal at a time.</p>
     </div>
     <div class="project-media">
       <div class="slider">
         <div class="slides">
+          <video src="images/bdl.mp4" muted></video>
           <img src="images/ration.jpg" alt="Project Bread 1">
-          <img src="images/rations.jpg" alt="Project Bread 2">
-          <img src="images/ev1.jpg" alt="Project Bread 3">
-          <img src="images/ev2.jpg" alt="Project Bread 4">
+          <img src="images/gj1.png" alt="Project Bread 2">
+          <img src="images/get.jpg" alt="Project Bread 2">
         </div>
         <button class="prev">&#10094;</button>
         <button class="next">&#10095;</button>
@@ -362,19 +339,19 @@
     </div>
   </section>
 
+  <!-- PROJECT GROWTH -->
   <section class="project-section" id="project-growth">
     <div class="project-content">
       <h2>PROJECT GROWTH</h2>
-      <p>We believe every child deserves a chance to build a brighter future, and that starts with education. Project Growth empowers young minds by providing them with the essential tools they need to succeed in school. We've supported children by **donating bags, books, and stationery**, ensuring they have everything required to learn and grow without barriers.</p>
-      <p>Beyond academics, we nurture creativity and confidence through engaging community events. By organizing exciting **drawing and dancing competitions**, we provide children with a platform to express themselves, discover their talents, and build a sense of achievement and joy. Our goal is to create a supportive environment where every child feels encouraged to learn and thrive.</p>
+      <p>We believe every child deserves a chance to build a brighter future, and that starts with education. Project Growth empowers young minds by providing them with the essential tools they need to succeed in school. We've supported children by <strong>donating bags, books, and stationery</strong>, ensuring they have everything required to learn and grow without barriers.</p>
+      <p>Beyond academics, we nurture creativity and confidence through engaging community events. By organizing exciting <strong>drawing and dancing competitions</strong>, we provide children with a platform to express themselves, discover their talents, and build a sense of achievement and joy. Our goal is to create a supportive environment where every child feels encouraged to learn and thrive.</p>
     </div>
     <div class="project-media">
       <div class="slider">
         <div class="slides">
-          <img src="images/pg1.jpg" alt="Project Growth 1">
+          <video src="images/get (6).mp4" muted></video>
           <img src="images/pgl1.jpg" alt="Project Growth 2">
-          <img src="images/growth3.jpg" alt="Project Growth 3">
-          <img src="images/growth4.jpg" alt="Project Growth 4">
+          <img src="images/tp6.jpg" alt="Project Growth 1">
         </div>
         <button class="prev">&#10094;</button>
         <button class="next">&#10095;</button>
@@ -382,19 +359,19 @@
     </div>
   </section>
 
+  <!-- PROJECT LIFELINE -->
   <section class="project-section" id="project-lifeline">
     <div class="project-content">
       <h2>PROJECT LIFELINE</h2>
-      <p>Access to quality healthcare is a basic human right. Through Project Lifeline, we bring critical medical support directly to those who need it most. Our efforts include the donation of essential equipment, such as **wheelchairs to the needy** and **hospital beds to local healthcare facilities**, helping to improve patient care and mobility.</p>
-      <p>In addition to equipment, we organize impactful community health events that extend our reach. We regularly hold **blood donation camps** to support hospitals, **dental camps** to provide free oral care, and even **hair donation camps** to help create wigs for cancer patients. These initiatives ensure that our community has access to life-saving and life-improving medical services.</p>
+      <p>Access to quality healthcare is a basic human right. Through Project Lifeline, we bring critical medical support directly to those who need it most. Our efforts include the donation of essential equipment, such as <strong>wheelchairs to the needy</strong> and <strong>hospital beds to local healthcare facilities</strong>, helping to improve patient care and mobility.</p>
+      <p>In addition to equipment, we organize impactful community health events that extend our reach. We regularly hold <strong>blood donation camps</strong> to support hospitals, <strong>dental camps</strong> to provide free oral care, and even <strong>hair donation camps</strong> to help create wigs for cancer patients. These initiatives ensure that our community has access to life-saving and life-improving medical services.</p>
     </div>
     <div class="project-media">
       <div class="slider">
         <div class="slides">
-          <img src="images/bld.jpg" alt="Project Lifeline 1">
-          <img src="images/evpbl2.jpg" alt="Project Lifeline 2">
-          <img src="images/evpl1.jpg" alt="Project Lifeline 3">
-          <img src="images/pbl3.jpg" alt="Project Lifeline 4">
+          <video src="images/get (8).mp4" muted></video>
+          <img src="images/evpbl2.jpg" alt="Project Lifeline 1">
+          <img src="images/pbl3.jpg" alt="Project Lifeline 2">
         </div>
         <button class="prev">&#10094;</button>
         <button class="next">&#10095;</button>
@@ -402,19 +379,19 @@
     </div>
   </section>
 
+  <!-- PROJECT WARMTH -->
   <section class="project-section" id="project-warmth">
     <div class="project-content">
       <h2>PROJECT WARMTH</h2>
-      <p>We believe everyone deserves to feel safe and protected from the elements. Project Warmth helps underprivileged families by distributing essential items like **blankets, warm clothes, and umbrellas**. Our goal is to protect people from the elements, ensuring they have the necessary resources to stay healthy and secure during the coldest and wettest seasons.</p>
+      <p>We believe everyone deserves to feel safe and protected from the elements. Project Warmth helps underprivileged families by distributing essential items like <strong>blankets, warm clothes, and umbrellas</strong>. Our goal is to protect people from the elements, ensuring they have the necessary resources to stay healthy and secure during the coldest and wettest seasons.</p>
       <p>This project is about more than just physical protection; it's about providing a sense of care and dignity. By offering these simple but vital items, we show our neighbors that they are not forgotten. We strive to bring a little bit of warmth to those who need it most, reminding them that their community stands with them.</p>
     </div>
     <div class="project-media">
       <div class="slider">
         <div class="slides">
+          <video src="images/tp8.mp4" muted></video>
           <img src="images/sk.jpg" alt="Project Warmth 1">
           <img src="images/bla1.jpg" alt="Project Warmth 2">
-          <img src="images/b3.jpg" alt="Project Warmth 3">
-          <img src="images/warmth4.jpg" alt="Project Warmth 4">
         </div>
         <button class="prev">&#10094;</button>
         <button class="next">&#10095;</button>
@@ -422,34 +399,6 @@
     </div>
   </section>
 
-  <script>
-    document.querySelectorAll('.slider').forEach((slider) => {
-      const slides = slider.querySelector('.slides');
-      const prev = slider.querySelector('.prev');
-      const next = slider.querySelector('.next');
-      const totalSlides = slides.children.length;
-      let index = 0;
-
-      function showSlide(i) {
-        slides.style.transform = `translateX(-${i * 100}%)`;
-      }
-
-      next.addEventListener('click', () => {
-        index = (index + 1) % totalSlides;
-        showSlide(index);
-      });
-
-      prev.addEventListener('click', () => {
-        index = (index - 1 + totalSlides) % totalSlides;
-        showSlide(index);
-      });
-
-      setInterval(() => {
-        index = (index + 1) % totalSlides;
-        showSlide(index);
-      }, 3000);
-    });
-  </script>
   <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
@@ -484,5 +433,46 @@
     </footer>
 
 
+  <script>
+    document.querySelectorAll('.slider').forEach((slider) => {
+      const slides = slider.querySelector('.slides');
+      const prev = slider.querySelector('.prev');
+      const next = slider.querySelector('.next');
+      const totalSlides = slides.children.length;
+      let index = 0;
+
+      function showSlide(i) {
+        slides.style.transform = `translateX(-${i * 100}%)`;
+        [...slides.children].forEach((el, idx) => {
+          if (el.tagName === "VIDEO") {
+            if (idx === i) {
+              el.play();
+            } else {
+              el.pause();
+              el.currentTime = 0;
+            }
+          }
+        });
+      }
+
+      next.addEventListener('click', () => {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+      });
+
+      prev.addEventListener('click', () => {
+        index = (index - 1 + totalSlides) % totalSlides;
+        showSlide(index);
+      });
+
+      setInterval(() => {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+      }, 5000);
+
+      // Start with first slide
+      showSlide(index);
+    });
+  </script>
 </body>
 </html>
